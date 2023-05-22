@@ -20,13 +20,13 @@ export default function Presentation() {
       <Image src='/oscar.jpg' width={200} height={200} alt='' className='rounded-full my-5'/>
 
       <div className="flex items-center space-x-5 mb-3">
-        <Link href='https://www.linkedin.com/in/oscar-julian-a95924189/'>
+        <Link href='https://www.linkedin.com/in/oscar-julian-a95924189/' aria-label="Oscar Umaña Linkedin">
           <BsLinkedin className='text-4xl'/>
         </Link>
-        <Link href='https://github.com/Lexuil'>
+        <Link href='https://github.com/Lexuil' aria-label="Oscar Umaña Github">
           <BsGithub className='text-4xl'/>
         </Link>
-        <a href = "mailto: lexuil97@gmail.com">
+        <a href = "mailto: lexuil97@gmail.com" aria-label="Oscar Umaña email">
           <IoMdMail className='text-4xl'/>
         </a>
       </div>

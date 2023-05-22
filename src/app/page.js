@@ -5,6 +5,8 @@ import { BsLinkedin, BsGithub } from 'react-icons/bs'
 import Link from 'next/link'
 
 export default function Home() {
+  const width = typeof window !== 'undefined' ? window.visualViewport.width : 0
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden relative">
       <motion.section
@@ -40,7 +42,7 @@ export default function Home() {
 
       {/* Mars */}
       <motion.div
-        initial={{ opacity: 0, y: 800, x: -1 * (window.visualViewport.width / 3) }}
+        initial={{ opacity: 0, y: 800, x: -1 * (width / 3) }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2.5, type: 'spring', bounce: 0.2 }}
         className='absolute top-28 left-0 right-0 -z-10'
@@ -62,7 +64,7 @@ export default function Home() {
 
       {/* Other */}
       <motion.div
-        initial={{ opacity: 0, y: 800, x: window.visualViewport.width / 4 }}
+        initial={{ opacity: 0, y: 800, x: width / 4 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 3, type: 'spring', bounce: 0.2 }}
         className='absolute top-28 left-0 right-0 -z-20 brightness-[0.15]'
@@ -84,7 +86,7 @@ export default function Home() {
 
       {/* Other */}
       <motion.div
-        initial={{ opacity: 0, y: 800, x: window.visualViewport.width / 3 }}
+        initial={{ opacity: 0, y: 800, x: width / 3 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2.9, type: 'spring', bounce: 0.2 }}
         className='absolute bottom-28 left-0 right-0 -z-10 brightness-[0.1]'

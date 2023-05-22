@@ -16,8 +16,18 @@
   }
 }
 
+@keyframes scroll {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 500px;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: url('/background.jpg');
   background-size: 500px 500px;
+  animation: scroll 20s linear infinite;
 }

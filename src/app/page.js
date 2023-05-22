@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 overflow-hidden relative">
+    <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden relative">
       <motion.section
         className='flex flex-col items-center justify-center'
         initial={{ opacity: 0 }}

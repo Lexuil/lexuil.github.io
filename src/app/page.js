@@ -14,13 +14,13 @@ export default function Home() {
         transition={{ duration: 2 }}
       >
         <p className='font-medium'>HOLA, YO SOY</p>
-        <h1 className='text-8xl font-black text-center whitespace-pre-line'>{`Oscar Julian
+        <h1 className='text-3xl sm:text-7xl font-extrabold sm:font-black text-center whitespace-pre-line'>{`Oscar Julian
         Umaña Benavides
         `}</h1>
 
         <Image src='/oscar.jpg' width={200} height={200} alt='' className='rounded-full my-5'/>
 
-        <div class="flex items-center space-x-5 mb-3">
+        <div className="flex items-center space-x-5 mb-3">
           <Link href='https://www.linkedin.com/in/oscar-julian-a95924189/'>
             <BsLinkedin className='text-4xl'/>
           </Link>
@@ -32,7 +32,7 @@ export default function Home() {
         <p className='text-xl font-medium'>Desarrollador web</p>
         <p className=''>Estudiante de ingeniería de electrónica</p>
 
-        <div class="flex items-center space-x-5 mb-3">
+        <div className="flex items-center space-x-5 mb-3">
           <button className='bg-white bg-opacity-10 border rounded-lg text-white px-5 py-2 mt-5 font-medium'>Proyectos</button>
           <button className='bg-white bg-opacity-10 border rounded-lg text-white px-5 py-2 mt-5 font-medium'>Contactarme</button>
         </div>
@@ -40,7 +40,7 @@ export default function Home() {
 
       {/* Mars */}
       <motion.div
-        initial={{ opacity: 0, y: 800, x: -400 }}
+        initial={{ opacity: 0, y: 800, x: -1 * (window.visualViewport.width / 3) }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2.5, type: 'spring', bounce: 0.2 }}
         className='absolute top-28 left-0 right-0 -z-10'
@@ -62,10 +62,10 @@ export default function Home() {
 
       {/* Other */}
       <motion.div
-        initial={{ opacity: 0, y: 800, x: 400 }}
+        initial={{ opacity: 0, y: 800, x: window.visualViewport.width / 4 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 3, type: 'spring', bounce: 0.2 }}
-        className='absolute top-28 left-0 right-0 -z-10 brightness-[0.15]'
+        className='absolute top-28 left-0 right-0 -z-20 brightness-[0.15]'
       >
         <motion.div
           animate={{
@@ -84,7 +84,7 @@ export default function Home() {
 
       {/* Other */}
       <motion.div
-        initial={{ opacity: 0, y: 800, x: 200 }}
+        initial={{ opacity: 0, y: 800, x: window.visualViewport.width / 3 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2.9, type: 'spring', bounce: 0.2 }}
         className='absolute bottom-28 left-0 right-0 -z-10 brightness-[0.1]'

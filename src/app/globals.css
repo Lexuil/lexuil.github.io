@@ -25,6 +25,11 @@
   }
 }
 
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: url('/background.jpg');

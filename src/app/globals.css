@@ -30,6 +30,12 @@ html, body {
   overflow-y: hidden;
 }
 
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: url('/background.jpg');

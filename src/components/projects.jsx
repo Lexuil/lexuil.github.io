@@ -2,35 +2,14 @@ import Image from 'next/image'
 import { AnimatePresence, m } from 'framer-motion'
 import { useState, useContext } from 'react'
 import { ViewContext } from '@/context'
+import { BiLink } from 'react-icons/bi'
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs'
+import FrameworkIcon from './frameworkIcon'
+import { projects } from '@/data/projects'
 
-// TODO: Movil view
 export default function Projects() {
   const [page, setPage] = useState(0)
   const setViewProjects = useContext(ViewContext)
-
-  const projects = [
-    {
-      name: 'Mangalianza',
-      description: 'Tienda online - Distribuidora de manga en español en Colombia',
-      image: '/projects/mangalianza.jpg',
-      image2: '/projects/mangalianza-movil.jpg',
-      link: 'https://mangalianza.com/'
-    },
-    {
-      name: 'Mangaline',
-      description: 'Presentación - Editorial de manga en español en Colombia',
-      image: '/projects/mangaline.jpg',
-      image2: '/projects/mangaline-movil.jpg',
-      link: 'https://mangaline.com.co/'
-    },
-    {
-      name: 'Chatbot Universidad ECCI',
-      description: 'Plataforma de atención al cliente',
-      image: '/projects/ecci.jpg',
-      image2: '/projects/ecci-movil.jpg'
-    }
-  ]
 
   const changePage = (direction) => {
     if (direction === 'left') {
@@ -63,12 +42,21 @@ export default function Projects() {
         transition: { duration: 0.5 }
       }}
     >
-      <div className="hidden sm:block">
-        <p className='font-medium m-5 md:mt-20'>ESTOS SON MIS</p>
+      {/* Title */}
+      <div className="hidden sm:flex flex-col items-center">
+        {/* Back button */}
+        <button
+          className='bg-white bg-opacity-10 border rounded-lg text-white px-5 py-2 mt-5 md:mt-10 font-medium'
+          onClick={() => setViewProjects(false)}
+        >
+          Regresar
+        </button>
+
+        <p className='font-medium mt-5'>ESTOS SON MIS</p>
         <div className="relative">
           <h1 className='text-3xl sm:text-7xl font-extrabold sm:font-black text-center whitespace-pre-line'>Proyectos</h1>
-          <BsFillArrowLeftCircleFill className='absolute inset-y-0 -left-14 my-auto text-4xl cursor-pointer' onClick={() => changePage('left')}/>
-          <BsFillArrowRightCircleFill className='absolute inset-y-0 -right-14 my-auto text-4xl cursor-pointer' onClick={() => changePage('right')}/>
+          <BsFillArrowLeftCircleFill className='absolute inset-y-0 -left-16 my-auto text-5xl cursor-pointer' onClick={() => changePage('left')}/>
+          <BsFillArrowRightCircleFill className='absolute inset-y-0 -right-16 my-auto text-5xl cursor-pointer' onClick={() => changePage('right')}/>
         </div>
       </div>
 
@@ -85,28 +73,46 @@ export default function Projects() {
             <Image src={projects[page].image} width={1000} height={800} alt={projects[page].name} className='hidden sm:block rounded-xl my-5'/>
             <Image src={projects[page].image2} width={400} height={400} alt={projects[page].name} className='block sm:hidden rounded-xl my-5 object-contain'/>
           </a>
-          <a href={projects[page].link} target='_blank'>
+          <a
+            href={projects[page].link}
+            target='_blank'
+            className={`
+              flex items-center
+              ${projects[page].link ? 'hover:underline' : ''}
+            `}
+          >
+            {projects[page].link && <BiLink className='h-7 w-7' />}
             <h2 className='text-xl sm:text-3xl font-bold'>{projects[page].name}</h2>
+            {/* Frameworks logos */}
+            <div className='flex items-center space-x-2 ml-5'>
+              {projects[page].frameworks.map((framework, index) => {
+                return (
+                  <FrameworkIcon framework={framework} key={`${framework}-${index}`} />
+                )
+              })}
+            </div>
           </a>
           <p className=''>{projects[page].description}</p>
         </m.div>
       </AnimatePresence>
 
-      <div className="block sm:hidden">
+      {/* Title mobile */}
+      <div className="flex sm:hidden flex-col items-center mb-8">
         <p className='font-medium m-5 md:mt-20'>ESTOS SON MIS</p>
         <div className="relative">
           <h1 className='text-3xl sm:text-7xl font-extrabold sm:font-black text-center whitespace-pre-line'>Proyectos</h1>
           <BsFillArrowLeftCircleFill className='absolute inset-y-0 -left-14 my-auto text-4xl cursor-pointer' onClick={() => changePage('left')}/>
           <BsFillArrowRightCircleFill className='absolute inset-y-0 -right-14 my-auto text-4xl cursor-pointer' onClick={() => changePage('right')}/>
         </div>
-      </div>
 
-      <button
-        className='bg-white bg-opacity-10 border rounded-lg text-white px-5 py-2 mt-5 font-medium'
-        onClick={() => setViewProjects(false)}
-      >
-        Regresar
-      </button>
+        {/* Back button */}
+        <button
+          className='bg-white bg-opacity-10 border rounded-lg text-white px-5 py-2 mt-5 font-medium'
+          onClick={() => setViewProjects(false)}
+        >
+          Regresar
+        </button>
+      </div>
     </m.section>
   )
 }

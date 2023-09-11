@@ -1,45 +1,8 @@
 ---
-import { Icon } from 'astro-icon'
+import MainLayout from "../layouts/MainLayout.astro";
+import Presentation from "../components/Presentation.astro";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="/favicon.svg"
-		/>
-		<meta
-			name="viewport"
-			content="width=device-width"
-		/>
-		<meta name="generator" content={Astro.generator} />
-		<title>Oscar Umaña</title>
-	</head>
-	<body class="bg-black text-white">
-		<article class="flex flex-col items-center justify-center min-h-screen space-y-5">
-			<h1 class="text-4xl font-black">Oscar Umaña</h1>
-			<div class="flex items-center space-x-5 mb-3">
-				<a
-					href='https://www.linkedin.com/in/oscar-julian-a95924189/'
-					aria-label="Oscar Umaña Linkedin"
-				>
-				  <Icon name="bi:linkedin" class='w-8 h-8'/>
-				</a>
-				<a
-					href='https://github.com/Lexuil'
-					aria-label="Oscar Umaña Github"
-				>
-				  <Icon name="bi:github" class='w-8 h-8'/>
-				</a>
-				<a
-					href = "mailto: lexuil97@gmail.com"
-					aria-label="Oscar Umaña email"
-				>
-				  <Icon name="ion:mail" class='w-8 h-8'/>
-				</a>
-			  </div>
-		</article>
-	</body>
-</html>
+<MainLayout>
+  <Presentation />
+</MainLayout>

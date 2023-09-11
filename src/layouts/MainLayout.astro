@@ -1,0 +1,39 @@
+---
+import "@fontsource/rubik/400.css";
+import "@fontsource/rubik/500.css";
+import "@fontsource/rubik/800.css";
+import "@fontsource/rubik/900.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Oscar Umaña</title>
+  </head>
+  <body class="bg-black text-white">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  @keyframes scroll {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 500px;
+    }
+  }
+
+  body {
+    color: black;
+    background: url("/background.jpg");
+    background-size: 500px 500px;
+    animation: scroll 20s linear infinite;
+  }
+</style>

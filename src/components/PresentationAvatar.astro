@@ -1,0 +1,8 @@
+---
+interface Props {
+  imageUrl: string;
+}
+const { imageUrl } = Astro.props;
+---
+
+<img src={imageUrl} alt="Foto de Oscar Umaña" class="rounded-full w-52 h-52" />

@@ -1,0 +1,34 @@
+---
+import PresentationTitle from "./PresentationTitle.astro";
+import PresentationAvatar from "./PresentationAvatar.astro";
+import ContactLink from "./ContactLink.astro";
+import PresentationDetails from "./PresentationDetails.astro";
+---
+
+<article
+  class="flex flex-col items-center justify-center min-h-screen space-y-6"
+>
+  <PresentationTitle title="Oscar Umaña" subTitle="Hola, soy" />
+
+  <PresentationAvatar imageUrl="/oscar.jpg" />
+
+  <div class="flex items-center space-x-5 mb-3">
+    <ContactLink
+      href="https://www.linkedin.com/in/oscar-julian-a95924189/"
+      ariaLabel="Oscar Umaña Linkedin"
+      iconName="bi:linkedin"
+    />
+    <ContactLink
+      href="https://www.instagram.com/lexuil/"
+      ariaLabel="Oscar Umaña Github"
+      iconName="bi:github"
+    />
+    <ContactLink
+      href="mailto: lexuil97@gmail.com"
+      ariaLabel="Oscar Umaña email"
+      iconName="ion:mail"
+    />
+  </div>
+
+  <PresentationDetails />
+</article>

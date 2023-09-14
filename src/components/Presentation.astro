@@ -3,6 +3,7 @@ import PresentationTitle from "./PresentationTitle.astro";
 import PresentationAvatar from "./PresentationAvatar.astro";
 import ContactLink from "./ContactLink.astro";
 import PresentationDetails from "./PresentationDetails.astro";
+import avatar from "../assests/images/avatar.jpg"
 ---
 
 <article
@@ -10,7 +11,7 @@ import PresentationDetails from "./PresentationDetails.astro";
 >
   <PresentationTitle title="Oscar Umaña" subTitle="Hola, soy" />
 
-  <PresentationAvatar imageUrl="/oscar.jpg" />
+  <PresentationAvatar imageUrl={avatar} />
 
   <div class="flex items-center space-x-5 mb-3">
     <ContactLink

@@ -1,0 +1,35 @@
+---
+interface Props {
+  imageUrl: string;
+  top: string;
+  left: string;
+  size: string;
+  mirror?: boolean;
+}
+const {
+  imageUrl,
+  top,
+  left,
+  size,
+  mirror = false
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'absolute w-max -z-10',
+    {
+      'left-0': !mirror,
+      'right-0': mirror
+    },
+  ]}
+  style={{
+    top,
+    transform: `translateX(${left})`
+  }}
+>
+  <img
+    src={imageUrl}
+    style={{ width: size }}
+  >
+</div>

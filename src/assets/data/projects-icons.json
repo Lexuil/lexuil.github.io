@@ -1,0 +1,10 @@
+
+{
+  "Laravel": "simple-icons:laravel",
+  "Vue.js": "simple-icons:vuedotjs",
+  "Tailwind CSS": "simple-icons:tailwindcss",
+  "Next.js": "simple-icons:nextdotjs",
+  "React.js": "simple-icons:react",
+  "Wordpress": "simple-icons:wordpress",
+  "Woocommerce": "simple-icons:woo"
+}

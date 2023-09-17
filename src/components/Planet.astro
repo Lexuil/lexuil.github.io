@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   class?: string;
@@ -21,12 +21,12 @@ const {
 <div
   class:list={[
     className,
-    'absolute inset-x-0 mx-auto -z-10 planet',
+    "absolute inset-x-0 mx-auto -z-10 planet",
     {
-      'planet-4': animationTime === 4,
-      'planet-5': animationTime === 5,
-      'planet-6': animationTime === 6
-    }
+      "planet-4": animationTime === 4,
+      "planet-5": animationTime === 5,
+      "planet-6": animationTime === 6,
+    },
   ]}
   style={{
     top,
@@ -35,34 +35,34 @@ const {
   <Image
     src={imageUrl}
     style={{
-      transform: `translateX(${xPosition})`
+      transform: `translateX(${xPosition})`,
     }}
     alt=""
-  >
+  />
+
+  <style>
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .planet-4 {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .planet-5 {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .planet-6 {
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
 </div>
-
-<style>
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.planet-4 {
-  animation: float 4s ease-in-out infinite;
-}
-
-.planet-5 {
-  animation: float 5s ease-in-out infinite;
-}
-
-.planet-6 {
-  animation: float 6s ease-in-out infinite;
-}
-</style>

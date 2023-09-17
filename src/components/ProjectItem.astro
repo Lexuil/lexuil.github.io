@@ -1,0 +1,56 @@
+---
+import Icon from "astro-icon";
+import frameworkIcons from "@assets/data/projects-icons.json";
+import type { FrameworkIcons } from "@types/projects";
+
+interface Props {
+  name: string;
+  description: string;
+  link: string | undefined;
+  frameworks: [FrameworkIcons];
+  imageUrl: string;
+  smallImageUrl: string;
+}
+const { name, description, link, frameworks, imageUrl, smallImageUrl } =
+  Astro.props;
+---
+
+<li class="flex flex-col items-center sm:my-10">
+  <a href={link}>
+    <!-- Desktop image -->
+    <img
+      src={imageUrl}
+      class="hidden sm:block w-full h-auto rounded-xl"
+      alt={`Captura de pantalla del proyecto ${name}`}
+    />
+
+    <!-- Mobile image -->
+    <img
+      src={smallImageUrl}
+      class="block sm:hidden w-full h-auto rounded-xl"
+      alt={`Captura de pantalla del proyecto ${name}`}
+    />
+  </a>
+  <div
+    class="flex max-sm:flex-col-reverse max-sm:space-y-reverse flex-wrap items-center max-sm:space-y-3 sm:space-x-5 mt-5"
+  >
+    <a href={link} class="hover:underline">
+      <h3 class="text-2xl sm:text-4xl font-bold">
+        {
+          link !== undefined && (
+            <Icon name="ph:link-bold" class="w-6 h-6 inline mr-3" />
+          )
+        }
+        {name}
+      </h3>
+    </a>
+    <div class="flex items-center space-x-3">
+      {
+        frameworks.map((framework) => {
+          return <Icon name={frameworkIcons[framework]} class="w-8 h-8" />;
+        })
+      }
+    </div>
+  </div>
+  <p>{description}</p>
+</li>

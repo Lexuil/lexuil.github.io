@@ -3,10 +3,10 @@ import PresentationTitle from "./PresentationTitle.astro";
 import PresentationAvatar from "./PresentationAvatar.astro";
 import ContactLink from "./ContactLink.astro";
 import PresentationDetails from "./PresentationDetails.astro";
-import avatar from "../assests/images/avatar.jpg"
+import avatar from "@assets/images/avatar.jpg";
 ---
 
-<article
+<section
   class="flex flex-col items-center justify-center min-h-screen space-y-6"
 >
   <PresentationTitle title="Oscar Umaña" subTitle="Hola, soy" />
@@ -32,4 +32,11 @@ import avatar from "../assests/images/avatar.jpg"
   </div>
 
   <PresentationDetails />
-</article>
+
+  <a
+    href="#Projects"
+    class="bg-transparent hover:bg-neutral-100 text-neutral-200 hover:text-black py-2 px-4 border border-neutral-100 hover:border-transparent rounded"
+  >
+    Proyectos</a
+  >
+</section>

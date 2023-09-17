@@ -21,6 +21,24 @@ import "@fontsource/rubik/900.css";
 </html>
 
 <style>
+  /* WebKit and Chromiums */
+  body::-webkit-scrollbar {
+    height: 12px;
+    width: 5px;
+    background: #343434;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #b8274a;
+    border-radius: 6px;
+  }
+
+  /* Firefox */
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: #b0b0b0 #e0e0e0;
+  }
+
   @keyframes scroll {
     0% {
       background-position-x: 0;

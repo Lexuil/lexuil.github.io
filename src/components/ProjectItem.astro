@@ -16,7 +16,16 @@ const { name, description, link, frameworks, imageUrl, smallImageUrl } =
 ---
 
 <li class="flex flex-col items-center sm:my-10">
-  <a href={link}>
+  <a
+    class:list={[
+      {
+        "pointer-events-none": link === undefined,
+      },
+    ]}
+    href={link ?? "#"}
+    aria-disabled={link === undefined}
+    target="_blank"
+  >
     <!-- Desktop image -->
     <img
       src={imageUrl}
@@ -34,11 +43,21 @@ const { name, description, link, frameworks, imageUrl, smallImageUrl } =
   <div
     class="flex max-sm:flex-col-reverse max-sm:space-y-reverse flex-wrap items-center max-sm:space-y-3 sm:space-x-5 mt-5"
   >
-    <a href={link} class="hover:underline">
+    <a
+      href={link ?? "#"}
+      class:list={[
+        {
+          "hover:underline": link !== undefined,
+          "pointer-events-none": link === undefined,
+        },
+      ]}
+      aria-disabled={link === undefined}
+      target="_blank"
+    >
       <h3 class="text-4xl font-bold">
         {
           link !== undefined && (
-            <Icon name="ph:link-bold" class="w-6 h-6 inline mr-3" />
+            <Icon name="ph:link-bold" class="w-6 h-6 inline mr-1" />
           )
         }
         {name}

@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Rubik", ...defaultTheme.fontFamily.sans],
+        sans: ["League Spartan Variable", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         react: "#61DAFB",

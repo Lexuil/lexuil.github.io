@@ -1,9 +1,14 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 interface Props {
   imageUrl: ImageMetadata;
 }
 const { imageUrl } = Astro.props;
 ---
 
-<Image src={imageUrl} alt="Foto de Oscar Umaña" class="rounded-full w-52 h-52" />
+<Image
+  src={imageUrl}
+  alt="Foto de Oscar Umaña"
+  class="rounded-full w-52 h-52"
+  loading={"eager"}
+/>

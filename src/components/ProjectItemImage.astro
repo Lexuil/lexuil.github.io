@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  link: string | undefined;
+  imageUrl: string;
+  smallImageUrl: string;
+}
+const { name, link, imageUrl, smallImageUrl } = Astro.props;
+---
+
+<div class="flex flex-col items-center my-10 sm:my-5">
+  <a
+    class:list={[
+      {
+        "pointer-events-none": link === undefined,
+      },
+    ]}
+    href={link ?? "#"}
+    aria-disabled={link === undefined}
+    target="_blank"
+  >
+    <!-- Desktop image -->
+    <Image
+      src={imageUrl}
+      class="hidden sm:block w-full h-auto rounded-xl aspect-video hover:border-2 hover:border-red-500 hover:scale-105 transition-all"
+      width={620}
+      height={350}
+      alt={`Captura de pantalla del proyecto ${name}`}
+    />
+
+    <!-- Mobile image -->
+    <Image
+      src={smallImageUrl}
+      class="block sm:hidden w-full h-auto rounded-xl aspect-[9/16]"
+      width={488}
+      height={868}
+      alt={`Captura de pantalla del proyecto ${name}`}
+    />
+  </a>
+</div>

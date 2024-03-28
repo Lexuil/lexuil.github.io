@@ -12,11 +12,11 @@ const { iconName, title, experience, bgColor } = Astro.props;
 
 <li
   class:list={[
-    "flex flex-col items-center justify-center rounded-lg w-60 h-60",
+    "flex flex-col items-center justify-center rounded-lg w-full md:w-60 h-fit md:h-60 max-md:p-5",
     `bg-${bgColor}/90`,
   ]}
 >
-  <Icon name={iconName} class="w-28 h-28" />
+  <Icon name={iconName} class="w-20 sm:w-28 h-20 sm:h-28" />
   <span class="text-2xl font-semibold">{title}</span>
   <span>{experience}</span>
 </li>

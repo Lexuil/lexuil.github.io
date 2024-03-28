@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+import frameworkIcons from "@assets/data/projects-icons.json";
+import type { FrameworkIcons } from "@types/projects";
+
+interface Props {
+  name: string;
+  description: string;
+  date: string;
+  link: string | undefined;
+  frameworks: [FrameworkIcons];
+  inverted?: boolean;
+}
+const { name, description, date, link, frameworks, inverted } = Astro.props;
+---
+
+<div class:list={["flex flex-col sm:my-10", { "items-end": inverted }]}>
+  <!-- Date -->
+  <p class:list={{ "text-right": inverted }}>{date}</p>
+
+  <!-- Title -->
+  <div
+    class="flex max-sm:flex-col-reverse max-sm:space-y-reverse flex-wrap items-center max-sm:space-y-3 sm:space-x-5 max-sm:my-2"
+  >
+    <a
+      href={link ?? "#"}
+      class:list={[
+        {
+          "underline hover:text-red-500 hover:scale-105 transition-all":
+            link !== undefined,
+          "pointer-events-none": link === undefined,
+        },
+      ]}
+      aria-disabled={link === undefined}
+      target="_blank"
+    >
+      <h3
+        class:list={[
+          "text-xl sm:text-3xl md:text-4xl font-bold",
+          { "text-right": inverted },
+        ]}
+      >
+        {
+          link !== undefined && (
+            <Icon name="ph:link-bold" class="w-6 h-6 inline mr-1" />
+          )
+        }
+        {name}
+      </h3>
+    </a>
+  </div>
+
+  <!-- Description -->
+  <p class:list={{ "text-right": inverted }}>{description}</p>
+
+  <!-- Frameworks icons -->
+  <div class="flex items-center space-x-2 my-2">
+    {
+      frameworks.map((framework) => {
+        return (
+          <Icon
+            name={frameworkIcons[framework]}
+            class="w-6 h-6 sm:w-7 sm:h-7"
+          />
+        );
+      })
+    }
+  </div>
+</div>

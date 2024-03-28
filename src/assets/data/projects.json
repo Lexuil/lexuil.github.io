@@ -1,19 +1,8 @@
 [
   {
-    "name": "Mangalianza",
-    "description": "Tienda online - Distribuidora de manga en español en Colombia",
-    "image": "mangalianza.webp",
-    "smallImage": "mangalianza-mobile.webp",
-    "link": "https://mangalianza.com/",
-    "frameworks": [
-      "Laravel",
-      "Vue.js",
-      "Tailwind CSS"
-    ]
-  },
-  {
     "name": "Chatbot Universidad ECCI",
     "description": "Plataforma de atención al cliente para la Universidad ECCI",
+    "date": "2023 - Actualidad",
     "image": "ecci.webp",
     "smallImage": "ecci-mobile.webp",
     "frameworks": [
@@ -23,7 +12,20 @@
   },
   {
     "name": "Mangaline",
+    "description": "Tienda online - Editorial de manga en español en Colombia",
+    "date": "2023",
+    "image": "mangaline-shop.webp",
+    "smallImage": "mangaline-shop-mobile.webp",
+    "link": "https://mangaline.com.co/",
+    "frameworks": [
+      "Wordpress",
+      "Woocommerce"
+    ]
+  },
+  {
+    "name": "Mangaline",
     "description": "Presentación - Editorial de manga en español en Colombia",
+    "date": "2023",
     "image": "mangaline.webp",
     "smallImage": "mangaline-mobile.webp",
     "frameworks": [
@@ -32,14 +34,16 @@
     ]
   },
   {
-    "name": "Mangaline",
-    "description": "Tienda online - Editorial de manga en español en Colombia",
-    "image": "mangaline-shop.webp",
-    "smallImage": "mangaline-shop-mobile.webp",
-    "link": "https://mangaline.com.co/",
+    "name": "Mangalianza",
+    "description": "Tienda online - Distribuidora de manga en español en Colombia",
+    "date": "2022 - Actualidad",
+    "image": "mangalianza.webp",
+    "smallImage": "mangalianza-mobile.webp",
+    "link": "https://mangalianza.com/",
     "frameworks": [
-      "Wordpress",
-      "Woocommerce"
+      "Laravel",
+      "Vue.js",
+      "Tailwind CSS"
     ]
   }
 ]

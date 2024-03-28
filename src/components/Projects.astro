@@ -1,27 +1,10 @@
 ---
-import ProjectItem from "./ProjectItem.astro";
-import projects from "@assets/data/projects.json";
-import type { FrameworkIcons } from "@types/projects";
 import SubTittle from "./SubTittle.astro";
+import TimeLine from "./TimeLine.astro";
 ---
 
 <section id="Projects" class="flex flex-col items-center justify-center">
   <SubTittle>Estos son mis</SubTittle>
   <h2 class="text-5xl sm:text-6xl font-bold text-center mb-10">Proyectos</h2>
-  <ul class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-10">
-    {
-      projects.map((project) => {
-        return (
-          <ProjectItem
-            name={project.name}
-            description={project.description}
-            link={project.link}
-            imageUrl={`/images/projects/${project.image}`}
-            smallImageUrl={`/images/projects/${project.smallImage}`}
-            frameworks={project.frameworks as [FrameworkIcons]}
-          />
-        );
-      })
-    }
-  </ul>
+  <TimeLine />
 </section>

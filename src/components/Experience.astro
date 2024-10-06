@@ -10,42 +10,90 @@ import ExprienceCard from "./ExprienceCard.astro";
   <SubTittle>Esta es mi</SubTittle>
   <h2 class="text-5xl sm:text-6xl font-bold text-center mb-10">Esperiencia</h2>
 
-  <ul class="grid grid-cols-2 md:grid-cols-3 gap-5 max-md:w-full max-md:px-5">
+  <ul
+    class="flex flex-wrap justify-center max-w-5xl gap-5 max-md:w-full max-md:px-5"
+  >
     <ExprienceCard
       iconName="simple-icons:react"
       title="React"
-      experience="1 año y medio"
       bgColor="react"
     />
-    <ExprienceCard
-      iconName="simple-icons:vuedotjs"
-      title="Vue"
-      experience="1 año y medio"
-      bgColor="vue"
-    />
+    <ExprienceCard iconName="simple-icons:vuedotjs" title="Vue" bgColor="vue" />
     <ExprienceCard
       iconName="simple-icons:nextdotjs"
       title="Next.js"
-      experience="1 año y medio"
       bgColor="next"
     />
     <ExprienceCard
       iconName="simple-icons:tailwindcss"
       title="Tailwind"
-      experience="1 año y medio"
       bgColor="tailwind"
     />
     <ExprienceCard
       iconName="simple-icons:laravel"
       title="Laravel"
-      experience="1 año"
       bgColor="laravel"
     />
     <ExprienceCard
       iconName="simple-icons:astro"
       title="Astro"
-      experience="6 meses"
       bgColor="astro"
+    />
+    <ExprienceCard
+      iconName="simple-icons:mysql"
+      title="MySql"
+      bgColor="mysql"
+    />
+    <ExprienceCard
+      iconName="simple-icons:docker"
+      title="Docker"
+      bgColor="docker"
+    />
+    <ExprienceCard
+      iconName="simple-icons:mongodb"
+      title="MongoDB"
+      bgColor="mongodb"
+    />
+    <ExprienceCard
+      iconName="simple-icons:amazonwebservices"
+      title="AWS"
+      bgColor="aws"
+    />
+    <ExprienceCard
+      iconName="simple-icons:amazondynamodb"
+      title="DynamoDB"
+      bgColor="dynamodb"
+    />
+    <ExprienceCard
+      iconName="simple-icons:amazonecs"
+      title="ECS"
+      bgColor="ecs"
+    />
+    <ExprienceCard iconName="simple-icons:amazons3" title="S3" bgColor="s3" />
+    <ExprienceCard
+      iconName="simple-icons:awslambda"
+      title="Lambda"
+      bgColor="lambda"
+    />
+    <ExprienceCard
+      iconName="simple-icons:whatsapp"
+      title="WhatsApp"
+      bgColor="whatsapp"
+    />
+    <ExprienceCard
+      iconName="simple-icons:terraform"
+      title="Terrafom"
+      bgColor="terraform"
+    />
+    <ExprienceCard
+      iconName="simple-icons:wordpress"
+      title="Wordpress"
+      bgColor="wordpress"
+    />
+    <ExprienceCard
+      iconName="simple-icons:woo"
+      title="Woocommerce"
+      bgColor="woocommerce"
     />
   </ul>
 </section>

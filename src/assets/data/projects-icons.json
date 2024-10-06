@@ -13,5 +13,7 @@
   "AWS": "simple-icons:amazonwebservices",
   "WhatsApp": "simple-icons:whatsapp",
   "Terrafom": "simple-icons:terraform",
-  "DynamoDB": "simple-icons:amazondynamodb"
+  "DynamoDB": "simple-icons:amazondynamodb",
+  "Typescript": "simple-icons:typescript",
+  "Rollup": "simple-icons:rollupdotjs"
 }

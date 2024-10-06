@@ -1,5 +1,18 @@
 [
   {
+    "name": "Ws Cloud API",
+    "description": "Librería para simplificar el uso de la Cloud API de WhatsApp",
+    "date": "2024 - Actualidad",
+    "image": "ws-cloud-api.webp",
+    "smallImage": "ws-cloud-api-mobile.webp",
+    "link": "https://ws-cloud-api.lexuil.com",
+    "frameworks": [
+      "Typescript",
+      "Rollup",
+      "WhatsApp"
+    ]
+  },
+  {
     "name": "Chatbot Presupuestos para la igualdad - ONU Mujeres",
     "description": "Chatbot diseñado para mejorar la accesibilidad sobre los proyectos para la equidad de la mujer",
     "date": "2024 - Actualidad",

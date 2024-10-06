@@ -6,5 +6,12 @@
   "Next.js": "simple-icons:nextdotjs",
   "React.js": "simple-icons:react",
   "Wordpress": "simple-icons:wordpress",
-  "Woocommerce": "simple-icons:woo"
+  "Woocommerce": "simple-icons:woo",
+  "MySql": "simple-icons:mysql",
+  "Docker": "simple-icons:docker",
+  "MongoDB": "simple-icons:mongodb",
+  "AWS": "simple-icons:amazonwebservices",
+  "WhatsApp": "simple-icons:whatsapp",
+  "Terrafom": "simple-icons:terraform",
+  "DynamoDB": "simple-icons:amazondynamodb"
 }

@@ -1,13 +1,34 @@
 [
   {
+    "name": "Chatbot Presupuestos para la igualdad - ONU Mujeres",
+    "description": "Chatbot diseñado para mejorar la accesibilidad sobre los proyectos para la equidad de la mujer",
+    "date": "2024 - Actualidad",
+    "image": "onu.webp",
+    "smallImage": "onu-mobile.webp",
+    "frameworks": [
+      "AWS",
+      "Terrafom",
+      "Next.js",
+      "Tailwind CSS",
+      "DynamoDB",
+      "Docker",
+      "WhatsApp"
+    ]
+  },
+  {
     "name": "Chatbot Universidad ECCI",
     "description": "Plataforma de atención al cliente para la Universidad ECCI",
     "date": "2023 - Actualidad",
     "image": "ecci.webp",
     "smallImage": "ecci-mobile.webp",
     "frameworks": [
+      "AWS",
+      "Terrafom",
       "Next.js",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "MongoDB",
+      "Docker",
+      "WhatsApp"
     ]
   },
   {
@@ -43,7 +64,9 @@
     "frameworks": [
       "Laravel",
       "Vue.js",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "MySql",
+      "Docker"
     ]
   }
 ]

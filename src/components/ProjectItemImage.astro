@@ -24,7 +24,7 @@ const { name, link, imageUrl, smallImageUrl } = Astro.props;
     <!-- Desktop image -->
     <Image
       src={imageUrl}
-      class="hidden sm:block w-full h-auto rounded-xl aspect-video hover:border-2 hover:border-red-500 hover:scale-105 transition-all"
+      class="hidden sm:block w-full h-auto rounded-xl aspect-video hover:border-2 hover:border-red-500 hover:scale-105 transition-all object-cover"
       width={620}
       height={350}
       alt={`Captura de pantalla del proyecto ${name}`}
@@ -33,7 +33,7 @@ const { name, link, imageUrl, smallImageUrl } = Astro.props;
     <!-- Mobile image -->
     <Image
       src={smallImageUrl}
-      class="block sm:hidden w-full h-auto rounded-xl aspect-[9/16]"
+      class="block sm:hidden w-full h-auto rounded-xl aspect-[9/16] object-cover"
       width={488}
       height={868}
       alt={`Captura de pantalla del proyecto ${name}`}

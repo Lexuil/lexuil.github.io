@@ -2,26 +2,29 @@
 import projects from "@assets/data/projects.json";
 import ProjectItemTitle from "./ProjectItemTitle.astro";
 import ProjectItemImage from "./ProjectItemImage.astro";
-import type { FrameworkIcons } from "@types/projects";
+import type { FrameworkIcons } from "src/types/projects";
 ---
 
-<section class="grid grid-cols-[1fr_3px_1fr] max-w-7xl mx-auto">
+<section class="grid grid-cols-1 md:grid-cols-[1fr_3px_1fr] max-w-7xl mx-auto">
   {
     projects.map((project, index) => {
       return (
         <>
+          <div class:list={[
+            'flex justify-center md:justify-end items-center mx-8',
+            { 'md:hidden': index % 2 !== 0 }
+          ]}>
+            <ProjectItemTitle
+              name={project.name}
+              description={project.description}
+              date={project.date}
+              link={project.link}
+              frameworks={project.frameworks as [FrameworkIcons]}
+              inverted
+            />
+          </div>
           {index % 2 === 0 &&
-            <div class="flex justify-end items-center mx-8">
-              <ProjectItemTitle
-                name={project.name}
-                description={project.description}
-                date={project.date}
-                link={project.link}
-                frameworks={project.frameworks as [FrameworkIcons]}
-                inverted
-              />
-            </div>
-            <div class="w-[3px] h-full bg-gradient-to-t from-red-500 to-rose-700 relative">
+            <div class="w-[3px] h-full bg-gradient-to-t from-red-500 to-rose-700 relative max-md:hidden">
               <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-red-500 to-rose-700 rounded-full" />
             </div>}
           <div class="flex justify-center items-center mx-8">
@@ -33,10 +36,10 @@ import type { FrameworkIcons } from "@types/projects";
             />
           </div>
           {index % 2 !== 0 &&
-            <div class="w-[3px] h-full bg-gradient-to-t from-rose-700 to-red-500 relative">
+            <div class="w-[3px] h-full bg-gradient-to-t from-rose-700 to-red-500 relative max-md:hidden">
               <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-red-500 to-rose-700 rounded-full" />
             </div>
-            <div class="flex justify-start items-center mx-8">
+            <div class="flex justify-start items-center mx-8 max-md:hidden">
               <ProjectItemTitle
                 name={project.name}
                 description={project.description}

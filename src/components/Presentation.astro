@@ -6,13 +6,9 @@ import PresentationDetails from "./PresentationDetails.astro";
 import avatar from "@assets/images/avatar.webp";
 ---
 
-<section
-  class="flex flex-col items-center justify-center min-h-screen space-y-6"
->
+<section class="flex flex-col items-center gap-6 my-10">
   <PresentationTitle title="Oscar Umaña" subTitle="Hola, soy" />
-
   <PresentationAvatar imageUrl={avatar} />
-
   <div class="flex items-center space-x-5 mb-3">
     <ContactLink
       href="https://www.linkedin.com/in/oscar-uma%C3%B1a-a95924189/"

@@ -4,16 +4,21 @@
   "Vue.js": "simple-icons:vuedotjs",
   "Tailwind CSS": "simple-icons:tailwindcss",
   "Next.js": "simple-icons:nextdotjs",
+  "Nuxt": "simple-icons:nuxtdotjs",
   "React.js": "simple-icons:react",
   "Wordpress": "simple-icons:wordpress",
   "Woocommerce": "simple-icons:woo",
+  "Shopify": "simple-icons:shopify",
   "MySql": "simple-icons:mysql",
   "Docker": "simple-icons:docker",
   "MongoDB": "simple-icons:mongodb",
   "AWS": "simple-icons:amazonwebservices",
+  "Cloudflare": "simple-icons:cloudflare",
   "WhatsApp": "simple-icons:whatsapp",
   "Terrafom": "simple-icons:terraform",
   "DynamoDB": "simple-icons:amazondynamodb",
+  "S3": "simple-icons:amazons3",
   "Typescript": "simple-icons:typescript",
-  "Rollup": "simple-icons:rollupdotjs"
+  "Rollup": "simple-icons:rollupdotjs",
+  "Turborepo": "simple-icons:turborepo"
 }

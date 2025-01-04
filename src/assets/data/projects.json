@@ -1,6 +1,19 @@
 [
   {
-    "name": "Ws Cloud API",
+    "name": "Biosuministros",
+    "description": "Herramientas personalizadas para la gestión de inventarios y ventas con Shopify y Word Office",
+    "date": "2025 - Actualidad",
+    "image": "biosuministros.webp",
+    "smallImage": "biosuministros-mobile.webp",
+    "link": "https://biosuministros.lexuil.com",
+    "frameworks": [
+      "Nuxt",
+      "Cloudflare",
+      "Shopify"
+    ]
+  },
+  {
+    "name": "Ws Cloud API (Open Source)",
     "description": "Librería para simplificar el uso de la Cloud API de WhatsApp",
     "date": "2024 - Actualidad",
     "image": "ws-cloud-api.webp",
@@ -9,6 +22,7 @@
     "frameworks": [
       "Typescript",
       "Rollup",
+      "Turborepo",
       "WhatsApp"
     ]
   },
@@ -18,12 +32,14 @@
     "date": "2024 - Actualidad",
     "image": "onu.webp",
     "smallImage": "onu-mobile.webp",
+    "link": "https://wa.me/573016697206",
     "frameworks": [
       "AWS",
       "Terrafom",
       "Next.js",
       "Tailwind CSS",
       "DynamoDB",
+      "S3",
       "Docker",
       "WhatsApp"
     ]
@@ -34,11 +50,15 @@
     "date": "2023 - Actualidad",
     "image": "ecci.webp",
     "smallImage": "ecci-mobile.webp",
+    "link": "https://wa.me/573162862300",
     "frameworks": [
       "AWS",
       "Terrafom",
       "Next.js",
+      "Turborepo",
       "Tailwind CSS",
+      "DynamoDB",
+      "S3",
       "MongoDB",
       "Docker",
       "WhatsApp"
@@ -78,6 +98,7 @@
       "Laravel",
       "Vue.js",
       "Tailwind CSS",
+      "S3",
       "MySql",
       "Docker"
     ]

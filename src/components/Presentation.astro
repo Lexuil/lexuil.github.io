@@ -4,6 +4,7 @@ import PresentationAvatar from "./PresentationAvatar.astro";
 import ContactLink from "./ContactLink.astro";
 import PresentationDetails from "./PresentationDetails.astro";
 import avatar from "@assets/images/avatar.webp";
+import contact from "@assets/data/contact.json";
 ---
 
 <section class="flex flex-col items-center gap-6 my-10">
@@ -11,17 +12,17 @@ import avatar from "@assets/images/avatar.webp";
   <PresentationAvatar imageUrl={avatar} />
   <div class="flex items-center space-x-5 mb-3">
     <ContactLink
-      href="https://www.linkedin.com/in/oscar-uma%C3%B1a-a95924189/"
+      href={contact.linkedin}
       ariaLabel="Oscar Umaña Linkedin"
       iconName="bi:linkedin"
     />
     <ContactLink
-      href="https://github.com/Lexuil/"
+      href={contact.github}
       ariaLabel="Oscar Umaña Github"
       iconName="bi:github"
     />
     <ContactLink
-      href="mailto: lexuil97@gmail.com"
+      href={`mailto:${contact.email}`}
       ariaLabel="Oscar Umaña email"
       iconName="ion:mail"
     />

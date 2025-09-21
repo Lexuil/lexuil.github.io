@@ -1,12 +1,13 @@
 ---
+import type { Locales } from "src/types/locales";
+import { pageData } from "@assets/data/pageData";
 
+const locale = Astro.currentLocale as Locales;
 ---
 
 <footer>
   <p class="text-center my-16">
-    Desarrollado por <a
-      href="https://github.com/Lexuil/"
-      class="hover:underline">@Lexuil</a
-    >
+    {pageData[locale].footer.developedBy}
+    <a href="https://github.com/Lexuil/" class="hover:underline">@Lexuil</a>
   </p>
 </footer>

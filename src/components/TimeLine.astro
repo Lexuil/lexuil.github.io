@@ -1,8 +1,11 @@
 ---
-import projects from "@assets/data/projects.json";
+import { projects } from "@assets/data/projects";
 import ProjectItemTitle from "./ProjectItemTitle.astro";
 import ProjectItemImage from "./ProjectItemImage.astro";
-import type { FrameworkIcons } from "src/types/projects";
+import type { FrameworkIcons } from "src/types/project";
+import type { Locales } from "src/types/locales";
+
+const locale = Astro.currentLocale as Locales;
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-[1fr_3px_1fr] max-w-7xl mx-auto">
@@ -16,10 +19,11 @@ import type { FrameworkIcons } from "src/types/projects";
           ]}>
             <ProjectItemTitle
               name={project.name}
-              description={project.description}
+              description={project.locales[locale].description}
               date={project.date}
               link={project.link}
               frameworks={project.frameworks as [FrameworkIcons]}
+              active={project.active}
               inverted
             />
           </div>
@@ -42,7 +46,7 @@ import type { FrameworkIcons } from "src/types/projects";
             <div class="flex justify-start items-center mx-8 max-md:hidden">
               <ProjectItemTitle
                 name={project.name}
-                description={project.description}
+                description={project.locales[locale].description}
                 date={project.date}
                 link={project.link}
                 frameworks={project.frameworks as [FrameworkIcons]}

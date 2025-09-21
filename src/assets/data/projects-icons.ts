@@ -1,5 +1,4 @@
-
-{
+export const frameworkIcons = {
   "Laravel": "simple-icons:laravel",
   "Vue.js": "simple-icons:vuedotjs",
   "Tailwind CSS": "simple-icons:tailwindcss",
@@ -21,4 +20,4 @@
   "Typescript": "simple-icons:typescript",
   "Rollup": "simple-icons:rollupdotjs",
   "Turborepo": "simple-icons:turborepo"
-}
+} as const;

@@ -1,7 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-import frameworkIcons from "@assets/data/projects-icons.json";
-import type { FrameworkIcons } from "src/types/projects";
+import { frameworkIcons } from "@assets/data/projects-icons";
+import type { FrameworkIcons } from "src/types/project";
+import type { Locales } from "src/types/locales";
+import { pageData } from "@assets/data/pageData";
 
 interface Props {
   name: string;
@@ -10,8 +12,12 @@ interface Props {
   link: string | undefined;
   frameworks: [FrameworkIcons];
   inverted?: boolean;
+  active?: boolean;
 }
-const { name, description, date, link, frameworks, inverted } = Astro.props;
+const { name, description, date, link, frameworks, inverted, active } =
+  Astro.props;
+
+const locale = Astro.currentLocale as Locales;
 ---
 
 <div
@@ -21,7 +27,9 @@ const { name, description, date, link, frameworks, inverted } = Astro.props;
   ]}
 >
   <!-- Date -->
-  <p class:list={{ "text-right": inverted }}>{date}</p>
+  <p class:list={{ "text-right": inverted }}>
+    {date}{active && ` - ${pageData[locale].projects.currently}`}
+  </p>
 
   <!-- Title -->
   <div

@@ -1,8 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import frameworkIcons from "@assets/data/projects-icons.json";
-import type { FrameworkIcons } from "src/types/projects";
+import { frameworkIcons } from "@assets/data/projects-icons";
+import type { FrameworkIcons } from "src/types/project";
+import type { Locales } from "src/types/locales";
+import { pageData } from "@assets/data/pageData";
 
 interface Props {
   name: string;
@@ -14,6 +16,7 @@ interface Props {
 }
 const { name, description, link, frameworks, imageUrl, smallImageUrl } =
   Astro.props;
+const locale = Astro.currentLocale as Locales;
 ---
 
 <li class="flex flex-col items-center sm:my-10">
@@ -33,7 +36,7 @@ const { name, description, link, frameworks, imageUrl, smallImageUrl } =
       class="hidden sm:block w-full h-auto rounded-xl aspect-video"
       width={620}
       height={350}
-      alt={`Captura de pantalla del proyecto ${name}`}
+      alt={`${pageData[locale].alt.projectScreenshot} ${name}`}
     />
 
     <!-- Mobile image -->
@@ -42,7 +45,7 @@ const { name, description, link, frameworks, imageUrl, smallImageUrl } =
       class="block sm:hidden w-full h-auto rounded-xl aspect-[9/16]"
       width={488}
       height={868}
-      alt={`Captura de pantalla del proyecto ${name}`}
+      alt={`${pageData[locale].alt.projectScreenshot} ${name}`}
     />
   </a>
   <div

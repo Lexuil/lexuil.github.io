@@ -1,10 +1,15 @@
 ---
-import contact from "@assets/data/contact.json";
+import type { Locales } from "src/types/locales";
+import { contact } from "@assets/data/contact";
+
+const locale = Astro.currentLocale as Locales;
 ---
 
 <div class="flex flex-col items-center text-lg">
-  <p class="text-2xl font-medium text-red-500">{contact.role}</p>
+  <p class="text-2xl font-medium text-red-500">
+    {contact.locales[locale].role}
+  </p>
   <p class="max-w-lg mt-3 mx-5 whitespace-pre-line">
-    {contact.description}
+    {contact.locales[locale].description}
   </p>
 </div>

@@ -1,15 +1,19 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import type { Locales } from "src/types/locales";
+import { pageData } from "@assets/data/pageData";
+
 interface Props {
   imageUrl: ImageMetadata;
 }
 const { imageUrl } = Astro.props;
+const locale = Astro.currentLocale as Locales;
 ---
 
 <Image
   src={imageUrl}
-  alt="Foto de Oscar Umaña"
+  alt={pageData[locale].alt.avatar}
   class="rounded-full w-44 h-44 rotate-[20deg]"
   loading={"eager"}
 />

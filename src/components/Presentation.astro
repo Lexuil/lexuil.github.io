@@ -4,11 +4,18 @@ import PresentationAvatar from "./PresentationAvatar.astro";
 import ContactLink from "./ContactLink.astro";
 import PresentationDetails from "./PresentationDetails.astro";
 import avatar from "@assets/images/avatar.webp";
-import contact from "@assets/data/contact.json";
+import { contact } from "@assets/data/contact";
+import type { Locales } from "src/types/locales";
+import { pageData } from "@assets/data/pageData";
+
+const locale = Astro.currentLocale as Locales;
 ---
 
 <section class="flex flex-col items-center gap-6 my-10">
-  <PresentationTitle title="Oscar Umaña" subTitle="Hola, soy" />
+  <PresentationTitle
+    title="Oscar Umaña"
+    subTitle={pageData[locale].presentation.greeting}
+  />
   <PresentationAvatar imageUrl={avatar} />
   <div class="flex items-center space-x-5 mb-3">
     <ContactLink
@@ -37,13 +44,13 @@ import contact from "@assets/data/contact.json";
       href="#Projects"
       class="bg-transparent hover:bg-red-500 text-neutral-200 hover:text-black py-2 px-4 border border-neutral-100 hover:border-transparent rounded"
     >
-      Proyectos
+      {pageData[locale].presentation.projectsButton}
     </a>
     <a
       href="#Experience"
       class="bg-transparent hover:bg-red-500 text-neutral-200 hover:text-black py-2 px-4 border border-neutral-100 hover:border-transparent rounded"
     >
-      Experiencia
+      {pageData[locale].presentation.experienceButton}
     </a>
   </div>
 </section>

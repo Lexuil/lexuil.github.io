@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import type { Locales } from "src/types/locales";
+import { pageData } from "@assets/data/pageData";
 
 interface Props {
   name: string;
@@ -8,6 +10,7 @@ interface Props {
   smallImageUrl: string;
 }
 const { name, link, imageUrl, smallImageUrl } = Astro.props;
+const locale = Astro.currentLocale as Locales;
 ---
 
 <div class="flex flex-col items-center my-10 sm:my-5">
@@ -27,7 +30,7 @@ const { name, link, imageUrl, smallImageUrl } = Astro.props;
       class="hidden sm:block w-full h-auto rounded-xl aspect-video hover:border-2 hover:border-red-500 hover:scale-105 transition-all object-cover"
       width={620}
       height={350}
-      alt={`Captura de pantalla del proyecto ${name}`}
+      alt={`${pageData[locale].alt.projectScreenshot} ${name}`}
     />
 
     <!-- Mobile image -->
@@ -36,7 +39,7 @@ const { name, link, imageUrl, smallImageUrl } = Astro.props;
       class="block sm:hidden w-full h-auto rounded-xl aspect-[9/16] object-cover"
       width={488}
       height={868}
-      alt={`Captura de pantalla del proyecto ${name}`}
+      alt={`${pageData[locale].alt.projectScreenshot} ${name}`}
     />
   </a>
 </div>

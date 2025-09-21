@@ -1,0 +1,61 @@
+---
+import type { Locales } from "src/types/locales";
+
+import IntroductionTitle from "@components/Introduction/IntroductionTitle.astro";
+import IntroductionAvatar from "@components/Introduction/IntroductionAvatar.astro";
+import IntroductionDetails from "@components/Introduction/IntroductionDetails.astro";
+
+import ContactLink from "@components/ContactLink.astro";
+
+import avatar from "@assets/images/avatar.webp";
+
+import { contact } from "@assets/data/contact";
+import { pageData } from "@assets/data/pageData";
+import Button from "@components/ui/Button.astro";
+
+const locale = Astro.currentLocale as Locales;
+---
+
+<section
+  class="flex max-md:flex-col justify-center items-center gap-6 min-h-[70dvh] max-md:my-10"
+>
+  <div class="flex flex-col items-center gap-6">
+    <IntroductionTitle
+      title="Oscar Umaña"
+      subTitle={pageData[locale].presentation.greeting}
+    />
+
+    <IntroductionAvatar imageUrl={avatar} />
+
+    <div class="flex items-center gap-5 mb-3">
+      <ContactLink
+        href={contact.linkedin}
+        ariaLabel="Oscar Umaña Linkedin"
+        iconName="bi:linkedin"
+      />
+      <ContactLink
+        href={contact.github}
+        ariaLabel="Oscar Umaña Github"
+        iconName="bi:github"
+      />
+      <ContactLink
+        href={`mailto:${contact.email}`}
+        ariaLabel="Oscar Umaña email"
+        iconName="ion:mail"
+      />
+    </div>
+
+    <div class="flex items-center flex-wrap gap-5">
+      <Button href="#Projects">
+        {pageData[locale].presentation.projectsButton}
+      </Button>
+      <Button href="#Experience">
+        {pageData[locale].presentation.experienceButton}
+      </Button>
+    </div>
+  </div>
+
+  <div class="mt-15">
+    <IntroductionDetails />
+  </div>
+</section>

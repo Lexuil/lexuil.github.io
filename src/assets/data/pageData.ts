@@ -21,7 +21,7 @@ export const pageData: PageData = {
       developedBy: "Developed by"
     },
     alt: {
-      avatar: "Photo of Oscar Umaña",
+      avatar: "Oscar Umaña",
       projectScreenshot: "Screenshot of project"
     }
   },

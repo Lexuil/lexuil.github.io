@@ -7,7 +7,7 @@ export const projects: Project[] = [
     image: "biosuministros.webp",
     smallImage: "biosuministros-mobile.webp",
     link: "https://biosuministros.lexuil.com",
-    active: true,
+    active: false,
     frameworks: [
       "Nuxt",
       "Cloudflare",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     image: "onu.webp",
     smallImage: "onu-mobile.webp",
     link: "https://wa.me/573016697206",
-    active: true,
+    active: false,
     frameworks: [
       "AWS",
       "Terrafom",

@@ -26,6 +26,8 @@
   --color-lambda: #FF9900;
 }
 
+@source inline("bg-react/90 bg-vue/90 bg-next/90 bg-turbo/90 bg-nuxt/90 bg-astro/90 bg-laravel/90 bg-tailwind/90 bg-wordpress/90 bg-woocommerce/90 bg-mysql/90 bg-docker/90 bg-mongodb/90 bg-aws/90 bg-cloudflare/90 bg-whatsapp/90 bg-terraform/90 bg-dynamodb/90 bg-ecs/90 bg-s3/90 bg-lambda/90");
+
 html {
   --sb-track-color: #232E33;
   --sb-thumb-color: var(--color-red-500);

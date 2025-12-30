@@ -6,7 +6,8 @@ export const pageData: PageData = {
     presentation: {
       greeting: "Hello, I'm",
       projectsButton: "Projects",
-      experienceButton: "Experience"
+      experienceButton: "Experience",
+      cv: 'CV'
     },
     experience: {
       subtitle: "This is my",
@@ -30,7 +31,8 @@ export const pageData: PageData = {
     presentation: {
       greeting: "Hola, soy",
       projectsButton: "Proyectos",
-      experienceButton: "Experiencia"
+      experienceButton: "Experiencia",
+      cv: 'CV'
     },
     experience: {
       subtitle: "Esta es mi",

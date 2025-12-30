@@ -1,9 +1,10 @@
 ---
 type Props = {
   href?: string;
+  target?: string;
 };
 
-const { href } = Astro.props;
+const { href, target } = Astro.props;
 
 const buttonClass =
   "bg-transparent hover:bg-red-500 text-neutral-200 hover:text-black py-2 px-4 border border-neutral-100 hover:border-transparent rounded";
@@ -15,7 +16,7 @@ const buttonClass =
       <slot />
     </button>
   ) : (
-    <a href={href} class={buttonClass}>
+    <a href={href} class={buttonClass} target={target}>
       <slot />
     </a>
   )

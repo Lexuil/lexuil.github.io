@@ -6,6 +6,7 @@ export type PageData = Record<Locales, {
     greeting: string
     projectsButton: string
     experienceButton: string
+    cv: string
   }
   experience: {
     subtitle: string

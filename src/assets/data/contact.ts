@@ -3,7 +3,7 @@ import type { Contact } from "src/types/contact"
 export const contact: Contact = {
   fullname: "Oscar Umaña",
   email: "dev@lexuil.com",
-  linkedin: "https://www.linkedin.com/in/oscar-uma%C3%B1a-a95924189/",
+  linkedin: "https://www.linkedin.com/in/lexuil/",
   github: "https://github.com/Lexuil",
   locales: {
     en: {

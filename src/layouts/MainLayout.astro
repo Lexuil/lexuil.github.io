@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/league-spartan";
+import "../styles/global.css";
 ---
 
 <html lang="es">
@@ -17,53 +18,3 @@ import "@fontsource-variable/league-spartan";
     </main>
   </body>
 </html>
-
-<style>
-  /* WebKit and Chromiums */
-  body::-webkit-scrollbar {
-    height: 12px;
-    width: 5px;
-    background: #343434;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: #b8274a;
-    border-radius: 6px;
-  }
-
-  /* Firefox */
-  body {
-    scrollbar-width: thin;
-    scrollbar-color: #b0b0b0 #e0e0e0;
-  }
-
-  @keyframes scroll {
-    0% {
-      background-position-x: 0;
-    }
-    100% {
-      background-position-x: 500px;
-    }
-  }
-
-  body {
-    color: black;
-    background: url("/background.jpg");
-    background-size: 500px 500px;
-    animation: scroll 20s linear infinite;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("/texture.svg");
-    background-repeat: repeat;
-    background-size: 100px 100px;
-    opacity: 0.05;
-  }
-</style>

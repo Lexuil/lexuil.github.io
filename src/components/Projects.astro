@@ -1,10 +1,16 @@
 ---
 import SubTittle from "./SubTittle.astro";
 import TimeLine from "./TimeLine.astro";
+import type { Locales } from "src/types/locales";
+import { pageData } from "@assets/data/pageData";
+
+const locale = Astro.currentLocale as Locales;
 ---
 
 <section id="Projects" class="flex flex-col items-center justify-center">
-  <SubTittle>Estos son mis</SubTittle>
-  <h2 class="text-5xl sm:text-6xl font-bold text-center mb-10">Proyectos</h2>
+  <SubTittle>{pageData[locale].projects.subtitle}</SubTittle>
+  <h2 class="text-5xl sm:text-6xl font-bold text-center mb-10">
+    {pageData[locale].projects.title}
+  </h2>
   <TimeLine />
 </section>

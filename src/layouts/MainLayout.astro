@@ -1,6 +1,9 @@
 ---
 import "@fontsource-variable/league-spartan";
 import "../styles/global.css";
+
+import { StarField } from "@components/star-field";
+import { Navigation } from "@components/navigation";
 ---
 
 <html lang="es">
@@ -13,7 +16,9 @@ import "../styles/global.css";
     <meta name="description" content="Portafolio de Oscar Umaña" />
   </head>
   <body class="bg-black text-white">
-    <main class="overflow-x-hidden relative">
+    <StarField client:load/>
+    <Navigation client:load />
+    <main class="relative z-10">
       <slot />
     </main>
   </body>

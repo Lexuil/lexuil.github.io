@@ -1,0 +1,28 @@
+---
+import { cn } from '@/lib/utils'
+
+interface Props {
+  class?: string
+  className?: string
+  delay?: number
+  animation?: string
+  range?: string
+}
+
+const {
+  class: classProp,
+  className,
+  delay = 0,
+  animation = 'animate-fade-in-up',
+  range = 'animate-range-[entry_0%_cover_35%]',
+} = Astro.props
+
+const style = delay > 0 ? `animation-delay: ${delay}ms;` : undefined
+---
+
+<div
+  class={cn('timeline-view will-change-transform', animation, range, classProp, className)}
+  style={style}
+>
+  <slot />
+</div>

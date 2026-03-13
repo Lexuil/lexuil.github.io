@@ -1,5 +1,5 @@
 ---
-import { AnimatedSection } from '@/components/animated-section';
+import AnimatedSection from '@/components/animated-section.astro';
 import { Planets } from '@/components/planets';
 import { Icon } from "astro-icon/components";
 import type { Profile } from '@/types/profile'
@@ -23,31 +23,31 @@ const { profile } = Astro.props;
   <div class="relative z-10 max-w-6xl w-full mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center">
     {/* Left column - Name & Title */}
     <div class="lg:sticky lg:top-32">
-      <AnimatedSection client:load>
+      <AnimatedSection>
         <span class="inline-block text-primary/80 text-xs tracking-[0.3em] uppercase mb-6 font-mono">
           Hi, I am
         </span>
       </AnimatedSection>
 
-      <AnimatedSection delay={100} client:load>
+      <AnimatedSection delay={100}>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-3 tracking-tight text-balance leading-[1.1]">
           {profile.name}
         </h1>
       </AnimatedSection>
 
-      <AnimatedSection delay={200} client:load>
+      <AnimatedSection delay={200}>
         <h2 class="text-lg sm:text-xl text-primary font-medium mb-8 tracking-tight">
           {profile.locales[locale].title}
         </h2>
       </AnimatedSection>
 
-      <AnimatedSection delay={300} client:load>
+      <AnimatedSection delay={300}>
         <p class="text-sm text-muted-foreground leading-relaxed max-w-sm">
           {profile.locales[locale].tagline}
         </p>
       </AnimatedSection>
 
-      <AnimatedSection delay={400} client:load>
+      <AnimatedSection delay={400}>
         <nav class="mt-12 hidden lg:block">
           <ul class="flex flex-col gap-4">
             {['About', 'Experience', 'Projects', 'Skills'].map((item) => (
@@ -65,7 +65,7 @@ const { profile } = Astro.props;
         </nav>
       </AnimatedSection>
 
-      <AnimatedSection delay={500} client:load>
+      <AnimatedSection delay={500}>
         <div class="flex items-center gap-5 mt-12">
           <a
             href={profile.social.github}
@@ -98,12 +98,12 @@ const { profile } = Astro.props;
 
     {/* Right column - Bio */}
     <div class="lg:py-24">
-      <AnimatedSection delay={300} client:load>
+      <AnimatedSection delay={300}>
         <p class="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
           {profile.locales[locale].bio}
         </p>
       </AnimatedSection>
-      <AnimatedSection delay={400} client:load>
+      <AnimatedSection delay={400}>
         <p class="text-sm sm:text-base text-muted-foreground/80 leading-relaxed">
           {profile.locales[locale].extendedBio}
         </p>
@@ -112,7 +112,7 @@ const { profile } = Astro.props;
   </div>
 
   {/* Scroll indicator */}
-  <AnimatedSection delay={800} client:load>
+  <AnimatedSection delay={800}>
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground/50">
       <Icon name="lucide:arrow-down" class="size-4 animate-bounce" />
     </div>

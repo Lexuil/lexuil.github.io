@@ -1,5 +1,5 @@
 ---
-import { AnimatedSection } from "@/components/animated-section";
+import AnimatedSection from "@/components/animated-section.astro";
 import TechIconMinimal from "@/components/tech-icon-minimal.astro";
 import type { Project } from "@/types/project";
 import type { Locales } from "@/types/locales";
@@ -17,7 +17,7 @@ const imageLoaded = true;
 const isEven = index % 2 === 0;
 ---
 
-<AnimatedSection delay={index * 150} client:load>
+<AnimatedSection delay={index * 150}>
   <article class="group relative">
     {/* Project Number */}
     <div class="absolute -left-4 lg:-left-12 top-0 hidden lg:block">

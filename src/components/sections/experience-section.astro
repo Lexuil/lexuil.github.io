@@ -1,5 +1,5 @@
 ---
-import { AnimatedSection } from "@/components/animated-section";
+import AnimatedSection from "@/components/animated-section.astro";
 import TechIcon from "@/components/tech-icon.astro";
 import { Icon } from "astro-icon/components";
 import type { Experience } from '@/types/experience'
@@ -15,7 +15,7 @@ const { experiences } = Astro.props;
 
 <section id="experience" class="py-24 lg:py-32 px-6 lg:px-12">
   <div class="max-w-6xl mx-auto">
-    <AnimatedSection client:load>
+    <AnimatedSection>
       <div class="flex items-center gap-4 mb-20">
         <span class="font-mono text-primary/60 text-sm">01.</span>
         <h2 class="text-sm tracking-[0.2em] uppercase text-muted-foreground">
@@ -27,7 +27,7 @@ const { experiences } = Astro.props;
 
     <div class="space-y-2">
       {experiences.map((exp, index) => (
-        <AnimatedSection delay={index * 100} client:load>
+        <AnimatedSection delay={index * 100}>
           <a
             href={exp.companyUrl}
             target="_blank"

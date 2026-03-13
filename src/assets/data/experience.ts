@@ -21,23 +21,6 @@ export const experience: Experience[] = [
   },
   {
     id: 2,
-    company: 'Ws Cloud API (Open Source)',
-    companyUrl: 'https://ws-cloud-api.lexuil.com',
-    period: '2024',
-    technologies: ['TypeScript', 'Rollup', 'Turborepo', 'WhatsApp'],
-    locales: {
-      es: {
-        role: 'Proyecto',
-        description: 'Librería para simplificar el uso de la Cloud API de WhatsApp'
-      },
-      en: {
-        role: 'Project',
-        description: 'Library to simplify the use of the WhatsApp Cloud API'
-      }
-    }
-  },
-  {
-    id: 3,
     company: 'Chatbot Presupuestos para la igualdad - ONU Mujeres',
     companyUrl: 'https://wa.me/573016697206',
     period: '2024',
@@ -64,7 +47,7 @@ export const experience: Experience[] = [
     }
   },
   {
-    id: 4,
+    id: 3,
     company: 'Chatbot Universidad ECCI',
     companyUrl: 'https://wa.me/573162862300',
     period: '2023',
@@ -92,7 +75,7 @@ export const experience: Experience[] = [
     }
   },
   {
-    id: 5,
+    id: 4,
     company: 'Mangaline',
     companyUrl: 'https://mangaline.com.co/',
     period: '2023',
@@ -109,7 +92,7 @@ export const experience: Experience[] = [
     }
   },
   {
-    id: 6,
+    id: 5,
     company: 'Mangaline',
     companyUrl: '#',
     period: '2023',
@@ -126,7 +109,7 @@ export const experience: Experience[] = [
     }
   },
   {
-    id: 7,
+    id: 6,
     company: 'Mangalianza',
     companyUrl: 'https://mangalianza.com/',
     period: '2022',

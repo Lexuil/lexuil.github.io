@@ -7,10 +7,13 @@ import ProjectsSection from "./sections/projects-section.astro";
 import { profile } from "@/assets/data/profile";
 import { experience } from "@/assets/data/experience";
 import { projects } from "@/assets/data/projects";
+import { skills } from "@/assets/data/skills";
+import SkillsSection from "./sections/skills-section.astro";
 ---
 
 <MainLayout>
   <HeroSection profile={profile} />
   <ExperienceSection experiences={experience} />
   <ProjectsSection projects={projects} />
+  <SkillsSection skillCategories={skills.categories} />
 </MainLayout>

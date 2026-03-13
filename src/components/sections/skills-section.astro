@@ -1,0 +1,46 @@
+---
+import AnimatedSection from "@/components/animated-section.astro";
+import TechIcon from "@/components/tech-icon.astro";
+
+interface Props {
+  skillCategories: {
+    name: string;
+    skills: string[];
+  }[];
+}
+
+const { skillCategories } = Astro.props;
+---
+
+<section id="skills" class="py-24 lg:py-32 px-6 lg:px-12">
+  <div class="max-w-6xl mx-auto">
+    <AnimatedSection>
+      <div class="flex items-center gap-4 mb-20">
+        <span class="font-mono text-primary/60 text-sm">03.</span>
+        <h2 class="text-sm tracking-[0.2em] uppercase text-muted-foreground">
+          Technologies
+        </h2>
+        <div class="flex-1 h-px bg-border/50" />
+      </div>
+    </AnimatedSection>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      {skillCategories.map((category, categoryIndex) => (
+        <AnimatedSection delay={categoryIndex * 100}>
+          <div>
+            <h3 class="text-xs font-mono text-primary/70 tracking-wider mb-6 pb-3 border-b border-border/30">
+              {category.name}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <div>
+                  <TechIcon name={skill} size="md" showLabel />
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</section>

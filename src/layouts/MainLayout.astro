@@ -3,7 +3,7 @@ import '@fontsource-variable/league-spartan'
 import '../styles/global.css'
 
 import StarField from '@components/star-field.astro'
-import { Navigation } from '@components/navigation'
+import Navigation from '@components/navigation.astro'
 import type { Locales } from '@/types/locales'
 import { seoTexts } from '@/i18/seo'
 
@@ -26,7 +26,7 @@ const seo = seoTexts[locale]
   </head>
   <body class="bg-black text-white">
     <StarField />
-    <Navigation client:load locale={locale} />
+    <Navigation locale={locale} />
     <main class="relative z-10">
       <slot />
     </main>

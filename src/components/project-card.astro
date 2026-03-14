@@ -5,6 +5,7 @@ import { sectionTexts } from '@/i18/sections'
 import type { Project } from '@/types/project'
 import type { Locales } from '@/types/locales'
 import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 
 interface Props {
   project: Project
@@ -57,13 +58,15 @@ const isEven = index % 2 === 0
             <div class="hidden md:block aspect-16/10 relative">
               {
                 project.screenshot && (
-                  <img
+                  <Image
                     src={project.screenshot}
                     alt={texts.screenshotAlt(project.locales[locale].title)}
                     class={`object-cover object-top transition-all duration-700 size-full ${
                       imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
                     } group-hover:scale-[1.03]`}
                     sizes="(max-width: 1024px) 100vw, 58vw"
+                    width="672"
+                    height="420"
                   />
                 )
               }
@@ -82,11 +85,13 @@ const isEven = index % 2 === 0
             <div class="block md:hidden aspect-video relative">
               {
                 project.screenshotMobile && (
-                  <img
+                  <Image
                     src={project.screenshotMobile}
                     alt={texts.mobileScreenshotAlt(project.locales[locale].title)}
                     class="object-cover object-center"
                     sizes="100vw"
+                    width="351"
+                    height="631"
                   />
                 )
               }

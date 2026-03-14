@@ -21,64 +21,73 @@ const { experiences } = Astro.props
 
   <div class="space-y-2">
     {
-      experiences.map((exp) => (
-        <AnimatedSection delay={300}>
-          <a
-            href={exp.companyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group block p-6 -mx-6 rounded-xl hover:bg-card/50 transition-all duration-300"
-          >
-            <div class="grid lg:grid-cols-[180px_1fr] gap-4 lg:gap-12">
-              <div class="text-xs tracking-wider text-muted-foreground/60 font-mono pt-1">
-                {exp.period}
-                {exp.currentActive ? ` - ${sectionTexts[locale].experienceItem.present}` : ''}
-              </div>
-              <div>
-                <h3 class="text-base font-medium text-foreground mb-1 flex items-center gap-2 group-hover:text-primary transition-colors">
-                  {exp.locales[locale].role}
-                  <span class="text-muted-foreground">·</span>
-                  <span class="text-primary/80">{exp.company}</span>
-                  {exp.currentActive && (
-                    <span class="rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide text-primary">
-                      {sectionTexts[locale].experienceItem.activeStatus}
-                    </span>
-                  )}
-                  <Icon
-                    name="lucide:arrow-up-right"
-                    class="size-4 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300"
-                  />
-                </h3>
-                <p class="text-sm text-muted-foreground leading-relaxed mb-5 max-w-xl">
-                  {exp.locales[locale].description}
-                </p>
-                {exp.technologiesByYear?.length ? (
-                  <div class="space-y-3">
-                    {exp.technologiesByYear.map((yearTech) => (
-                      <div class="flex items-center gap-2">
-                        <p class="text-xs font-mono tracking-wider text-muted-foreground/70">
-                          {yearTech.year}
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                          {yearTech.technologies.map((tech) => (
-                            <TechIcon name={tech} size="sm" />
-                          ))}
+      experiences.map((exp) => {
+        const companyUrl = (exp.companyUrl ?? '').trim()
+        const hasCompanyUrl = Boolean(companyUrl && companyUrl !== '#')
+        const WrapperTag = hasCompanyUrl ? 'a' : 'div'
+        const wrapperProps = hasCompanyUrl
+          ? { href: companyUrl, target: '_blank', rel: 'noopener noreferrer' }
+          : {}
+
+        return (
+          <AnimatedSection delay={300}>
+            <WrapperTag
+              {...wrapperProps}
+              class="group block p-6 -mx-6 rounded-xl hover:bg-card/50 transition-all duration-300"
+            >
+              <div class="grid lg:grid-cols-[180px_1fr] gap-4 lg:gap-12">
+                <div class="text-xs tracking-wider text-muted-foreground/60 font-mono pt-1">
+                  {exp.period}
+                  {exp.currentActive ? ` - ${sectionTexts[locale].experienceItem.present}` : ''}
+                </div>
+                <div>
+                  <h3 class="text-base font-medium text-foreground mb-1 flex items-center gap-2 group-hover:text-primary transition-colors">
+                    {exp.locales[locale].role}
+                    <span class="text-muted-foreground">·</span>
+                    <span class="text-primary/80">{exp.company}</span>
+                    {exp.currentActive && (
+                      <span class="rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide text-primary">
+                        {sectionTexts[locale].experienceItem.activeStatus}
+                      </span>
+                    )}
+                    {hasCompanyUrl && (
+                      <Icon
+                        name="lucide:arrow-up-right"
+                        class="size-4 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300"
+                      />
+                    )}
+                  </h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed mb-5 max-w-xl">
+                    {exp.locales[locale].description}
+                  </p>
+                  {exp.technologiesByYear?.length ? (
+                    <div class="space-y-3">
+                      {exp.technologiesByYear.map((yearTech) => (
+                        <div class="flex items-center gap-2">
+                          <p class="text-xs font-mono tracking-wider text-muted-foreground/70">
+                            {yearTech.year}
+                          </p>
+                          <div class="flex flex-wrap gap-2">
+                            {yearTech.technologies.map((tech) => (
+                              <TechIcon name={tech} size="sm" />
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div class="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <TechIcon name={tech} size="sm" />
-                    ))}
-                  </div>
-                )}
+                      ))}
+                    </div>
+                  ) : (
+                    <div class="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <TechIcon name={tech} size="sm" />
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          </a>
-        </AnimatedSection>
-      ))
+            </WrapperTag>
+          </AnimatedSection>
+        )
+      })
     }
   </div>
 </SectionContainer>

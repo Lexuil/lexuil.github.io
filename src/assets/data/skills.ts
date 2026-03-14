@@ -30,11 +30,29 @@ export const skills: { categories: SkillCategory[] } = {
         'Nest.js',
         'Express',
         'Laravel',
-        'Tailwind CSS',
-        'Vite',
-        'Turborepo',
         'Wordpress',
         'Woocommerce'
+      ]
+    },
+    {
+      locales: {
+        en: {
+          name: 'Tools'
+        },
+        es: {
+          name: 'Herramientas'
+        }
+      },
+      skills: [
+        'Vite',
+        'Vitest',
+        'Oxc',
+        'Tailwind CSS',
+        'Turborepo',
+        'Tanstack',
+        'Git',
+        'Eslint',
+        'Prettier'
       ]
     },
     {
@@ -46,7 +64,7 @@ export const skills: { categories: SkillCategory[] } = {
           name: 'Cloud e infraestructura'
         }
       },
-      skills: ['AWS', 'IBM Cloud', 'Cloudflare', 'Terraform', 'Docker', 'S3', 'Coolify', 'Vercel']
+      skills: ['AWS', 'Cloudflare', 'Terraform', 'SST', 'Docker', 'S3', 'Coolify', 'Vercel']
     },
     {
       locales: {
@@ -68,7 +86,7 @@ export const skills: { categories: SkillCategory[] } = {
           name: 'Plataformas e integraciones'
         }
       },
-      skills: ['Shopify', 'WhatsApp', 'Strapi', 'Twenty']
+      skills: ['Shopify', 'WhatsApp', 'Strapi', 'Twenty', 'Resend']
     }
   ]
 }

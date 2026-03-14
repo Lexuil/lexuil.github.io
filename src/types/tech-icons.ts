@@ -36,6 +36,12 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
   WebSocket: { icon: 'simple-icons:socketdotio', color: '#010101' },
   Turborepo: { icon: 'simple-icons:turborepo', color: '#FF0000' },
   Terraform: { icon: 'simple-icons:terraform', color: '#623CE4' },
+  SST: { icon: 'simple-icons:sst', color: '#E27152' },
+  Tanstack: { icon: 'simple-icons:tanstack', color: '#FFFFFF' },
+  Eslint: { icon: 'simple-icons:eslint', color: '#4B32C3' },
+  Prettier: { icon: 'simple-icons:prettier', color: '#F7B93E' },
+  Oxc: { icon: 'simple-icons:oxc', color: '#00F7F1' },
+  Vitest: { icon: 'simple-icons:vitest', color: '#00FF74' },
 
   // Databases
   PostgreSQL: { icon: 'simple-icons:postgresql', color: '#4169E1' },
@@ -56,5 +62,6 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
   Wordpress: { icon: 'simple-icons:wordpress', color: '#21759B' },
   Woocommerce: { icon: 'simple-icons:woocommerce', color: '#96588A' },
   Shopify: { icon: 'simple-icons:shopify', color: '#96BF48' },
-  WhatsApp: { icon: 'simple-icons:whatsapp', color: '#25D366' }
+  WhatsApp: { icon: 'simple-icons:whatsapp', color: '#25D366' },
+  Resend: { icon: 'simple-icons:resend', color: '#FFFFFF' }
 }

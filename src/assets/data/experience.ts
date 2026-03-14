@@ -4,7 +4,7 @@ export const experience: Experience[] = [
   {
     id: 1,
     company: 'Biosuministros',
-    companyUrl: 'https://biosuministros.lexuil.com',
+    companyUrl: '',
     period: '2025',
     technologies: ['Nuxt', 'Cloudflare', 'Shopify'],
     locales: {
@@ -23,7 +23,7 @@ export const experience: Experience[] = [
   {
     id: 2,
     company: 'ONU Mujeres Colombia',
-    companyUrl: 'https://wa.me/573016697206',
+    companyUrl: 'https://colombia.unwomen.org/es',
     period: '2024 - 2025',
     technologies: [
       'AWS',
@@ -51,7 +51,7 @@ export const experience: Experience[] = [
   {
     id: 3,
     company: 'Universidad ECCI',
-    companyUrl: 'https://wa.me/573162862300',
+    companyUrl: 'https://ecci.edu.co',
     period: '2023',
     currentActive: true,
     technologies: [],
@@ -82,7 +82,7 @@ export const experience: Experience[] = [
         ]
       },
       {
-        year: '2025',
+        year: '2026',
         technologies: [
           'AWS',
           'Terraform',
@@ -117,7 +117,7 @@ export const experience: Experience[] = [
   {
     id: 4,
     company: 'Mangaline',
-    companyUrl: 'https://mangaline.com.co/',
+    companyUrl: 'https://www.mangalinecomics.com',
     period: '2023',
     technologies: ['Wordpress', 'Woocommerce'],
     locales: {
@@ -136,7 +136,7 @@ export const experience: Experience[] = [
   {
     id: 5,
     company: 'Mangaline',
-    companyUrl: '#',
+    companyUrl: 'https://www.mangalinecomics.com',
     period: '2023',
     technologies: ['React', 'Tailwind CSS', 'Vite'],
     locales: {

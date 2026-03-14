@@ -1,6 +1,6 @@
 ---
 import AnimatedSection from '@/components/animated-section.astro'
-import { Planets } from '@/components/planets'
+import Planets from '@/components/planets.astro'
 import { Icon } from 'astro-icon/components'
 import { sectionTexts } from '@/i18/sections'
 import type { Profile } from '@/types/profile'
@@ -17,9 +17,9 @@ const { profile } = Astro.props
 
 <section
   id="about"
-  class="relative min-h-screen flex flex-col justify-center px-6 lg:px-12 pt-20 overflow-hidden"
+  class="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden"
 >
-  <Planets client:load />
+  <Planets />
 
   {/* Main content grid */}
   <div

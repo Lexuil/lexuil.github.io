@@ -1,0 +1,262 @@
+---
+import type { Locales } from '@/types/locales'
+import { sectionTexts } from '@/i18/sections'
+
+interface Props {
+  locale: Locales
+}
+
+const { locale } = Astro.props
+const navItems = sectionTexts[locale].navigation.items
+const toggleMenuAriaLabel = sectionTexts[locale].navigation.toggleMenuAriaLabel
+---
+
+<div data-navigation-root>
+  <nav data-navigation-bar class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-5">
+      <div class="flex items-center justify-between">
+        <a
+          href="#about"
+          class="text-foreground font-medium text-sm tracking-tight hover:text-primary transition-colors"
+        >
+          <span class="font-mono text-primary/60 mr-1">{'<'}</span>
+          LX
+          <span class="font-mono text-primary/60 ml-1">{'/>'}</span>
+        </a>
+
+        <ul class="hidden md:flex items-center gap-1">
+          {
+            navItems.map((item, index) => (
+              <li>
+                <a
+                  href={item.href}
+                  data-nav-link
+                  data-section={item.href.slice(1)}
+                  class="relative px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300 text-muted-foreground hover:text-foreground"
+                >
+                  <span class="font-mono text-primary/50 mr-1.5">
+                    {String(index + 1).padStart(2, '0')}.
+                  </span>
+                  {item.label}
+                  <span
+                    data-nav-underline
+                    class="absolute bottom-0 left-4 right-4 h-px bg-primary/50 opacity-0 transition-opacity duration-300"
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <button
+          data-menu-button
+          type="button"
+          class="md:hidden p-2 -m-2 text-muted-foreground hover:text-foreground transition-colors"
+          aria-label={toggleMenuAriaLabel}
+          aria-controls="mobile-navigation"
+          aria-expanded="false"
+        >
+          <svg
+            data-menu-open-icon
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-5 h-5"
+            aria-hidden="true"
+          >
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+          <svg
+            data-menu-close-icon
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-5 h-5 hidden"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div
+    id="mobile-navigation"
+    data-mobile-menu
+    class="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl md:hidden transition-all duration-300 opacity-0 pointer-events-none"
+  >
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      {
+        navItems.map((item, index) => (
+          <a
+            href={item.href}
+            data-mobile-nav-link
+            data-section={item.href.slice(1)}
+            class="text-2xl tracking-tight transition-colors text-muted-foreground"
+          >
+            <span class="font-mono text-primary/50 text-sm mr-2">
+              {String(index + 1).padStart(2, '0')}.
+            </span>
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  const initNavigation = () => {
+    const root = document.querySelector<HTMLElement>('[data-navigation-root]')
+    if (!root || root.dataset.initialized === 'true') return
+    root.dataset.initialized = 'true'
+
+    const navBar = root.querySelector<HTMLElement>('[data-navigation-bar]')
+    const menuButton = root.querySelector<HTMLButtonElement>('[data-menu-button]')
+    const mobileMenu = root.querySelector<HTMLElement>('[data-mobile-menu]')
+    const openIcon = root.querySelector<HTMLElement>('[data-menu-open-icon]')
+    const closeIcon = root.querySelector<HTMLElement>('[data-menu-close-icon]')
+    const desktopLinks = Array.from(root.querySelectorAll<HTMLAnchorElement>('[data-nav-link]'))
+    const mobileLinks = Array.from(
+      root.querySelectorAll<HTMLAnchorElement>('[data-mobile-nav-link]')
+    )
+    const sections = desktopLinks
+      .map((link) => link.getAttribute('data-section') ?? '')
+      .filter((section) => section.length > 0)
+
+    let activeSection = ''
+    let isMobileMenuOpen = false
+
+    const setMobileMenuOpen = (open: boolean) => {
+      isMobileMenuOpen = open
+
+      if (mobileMenu) {
+        mobileMenu.classList.toggle('opacity-100', open)
+        mobileMenu.classList.toggle('pointer-events-auto', open)
+        mobileMenu.classList.toggle('opacity-0', !open)
+        mobileMenu.classList.toggle('pointer-events-none', !open)
+      }
+
+      openIcon?.classList.toggle('hidden', open)
+      closeIcon?.classList.toggle('hidden', !open)
+      menuButton?.setAttribute('aria-expanded', String(open))
+    }
+
+    const setActiveSection = (nextSection: string) => {
+      if (!nextSection || nextSection === activeSection) return
+      activeSection = nextSection
+
+      for (const link of desktopLinks) {
+        const isActive = link.getAttribute('data-section') === activeSection
+        link.classList.toggle('text-foreground', isActive)
+        link.classList.toggle('text-muted-foreground', !isActive)
+
+        const underline = link.querySelector<HTMLElement>('[data-nav-underline]')
+        if (underline) {
+          underline.classList.toggle('opacity-100', isActive)
+          underline.classList.toggle('opacity-0', !isActive)
+        }
+      }
+
+      for (const link of mobileLinks) {
+        const isActive = link.getAttribute('data-section') === activeSection
+        link.classList.toggle('text-foreground', isActive)
+        link.classList.toggle('text-muted-foreground', !isActive)
+      }
+    }
+
+    const updateScrolledState = () => {
+      if (!navBar) return
+
+      const isScrolled = window.scrollY > 50
+      navBar.classList.toggle('bg-background/60', isScrolled)
+      navBar.classList.toggle('backdrop-blur-xl', isScrolled)
+      navBar.classList.toggle('border-b', isScrolled)
+      navBar.classList.toggle('border-border/50', isScrolled)
+    }
+
+    const detectActiveSection = () => {
+      if (sections.length === 0) return
+
+      let candidate = sections[0]
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i]
+        const element = document.getElementById(section)
+
+        if (!element) continue
+        if (element.getBoundingClientRect().top <= 150) {
+          candidate = section
+          break
+        }
+      }
+
+      setActiveSection(candidate)
+    }
+
+    const handleScroll = () => {
+      updateScrolledState()
+      detectActiveSection()
+    }
+
+    const handleRootClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null
+      if (!target) return
+
+      if (target.closest('[data-menu-button]')) {
+        setMobileMenuOpen(!isMobileMenuOpen)
+        return
+      }
+
+      if (target.closest('[data-mobile-nav-link]')) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    setActiveSection('about')
+    handleScroll()
+
+    root.addEventListener('click', handleRootClick)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('keydown', handleKeydown)
+    window.addEventListener('resize', handleResize)
+
+    const cleanup = () => {
+      root.removeEventListener('click', handleRootClick)
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('keydown', handleKeydown)
+      window.removeEventListener('resize', handleResize)
+    }
+
+    window.addEventListener('pagehide', cleanup, { once: true })
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigation, { once: true })
+  } else {
+    initNavigation()
+  }
+</script>

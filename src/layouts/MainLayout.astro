@@ -1,19 +1,33 @@
 ---
-import "@fontsource-variable/league-spartan";
-import "../styles/global.css";
+import '@fontsource-variable/league-spartan'
+import '../styles/global.css'
+
+import StarField from '@components/star-field.astro'
+import Navigation from '@components/navigation.astro'
+import type { Locales } from '@/types/locales'
+import { seoTexts } from '@/i18/seo'
+
+const locale = Astro.currentLocale as Locales
+const seo = seoTexts[locale]
 ---
 
-<html lang="es">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Oscar Umaña</title>
-    <meta name="description" content="Portafolio de Oscar Umaña" />
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
   </head>
   <body class="bg-black text-white">
-    <main class="overflow-x-hidden relative">
+    <StarField />
+    <Navigation locale={locale} />
+    <main class="relative z-10">
       <slot />
     </main>
   </body>

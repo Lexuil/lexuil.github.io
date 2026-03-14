@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"]
@@ -10,10 +11,12 @@
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
-      },
+      }
     ],
     "verbatimModuleSyntax": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]

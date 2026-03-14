@@ -1,0 +1,27 @@
+---
+import type { Project } from '@/types/project'
+import type { Locales } from '@/types/locales'
+import { sectionTexts } from '@/i18/sections'
+import ProjectCard from '@/components/project-card.astro'
+import SectionContainer from '@/components/section-container.astro'
+import SectionHeading from '@/components/section-heading.astro'
+
+interface Props {
+  projects: Project[]
+}
+
+const { projects } = Astro.props
+const locale = Astro.currentLocale as Locales
+---
+
+<SectionContainer id="projects" class="py-24 lg:py-40">
+  <SectionHeading
+    number="03."
+    title={sectionTexts[locale].sectionHeadings.projects}
+    class="mb-24"
+  />
+
+  <div class="space-y-32 lg:space-y-48">
+    {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+  </div>
+</SectionContainer>

@@ -1,16 +1,21 @@
 ---
-import MainLayout from "@layouts/MainLayout.astro";
-import Introduction from "@components/Introduction/Introduction.astro";
-import Planets from "@components/Planets.astro";
-import Projects from "@components/Projects.astro";
-import Experience from "@components/Experience.astro";
-import Footer from "@components/Footer.astro";
+import MainLayout from '@layouts/MainLayout.astro'
+import HeroSection from './sections/hero-section.astro'
+import ExperienceSection from './sections/experience-section.astro'
+import ProjectsSection from './sections/projects-section.astro'
+import SkillsSection from './sections/skills-section.astro'
+import Footer from './footer.astro'
+
+import { profile } from '@/assets/data/profile'
+import { experience } from '@/assets/data/experience'
+import { projects } from '@/assets/data/projects'
+import { skills } from '@/assets/data/skills'
 ---
 
 <MainLayout>
-  <Planets />
-  <Introduction />
-  <Projects />
-  <Experience />
-  <Footer />
+  <HeroSection profile={profile} />
+  <ExperienceSection experiences={experience} />
+  <ProjectsSection projects={projects} />
+  <SkillsSection skillCategories={skills.categories} />
+  <Footer email={profile.email} />
 </MainLayout>

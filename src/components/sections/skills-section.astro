@@ -1,0 +1,41 @@
+---
+import AnimatedSection from '@/components/animated-section.astro'
+import TechIcon from '@/components/tech-icon.astro'
+import SectionContainer from '@/components/section-container.astro'
+import SectionHeading from '@/components/section-heading.astro'
+import { sectionTexts } from '@/i18/sections'
+import type { Locales } from '@/types/locales'
+import type { SkillCategory } from '@/types/skills'
+
+interface Props {
+  skillCategories: SkillCategory[]
+}
+
+const { skillCategories } = Astro.props
+const locale = Astro.currentLocale as Locales
+---
+
+<SectionContainer id="skills" class="py-24 lg:py-32">
+  <SectionHeading number="04." title={sectionTexts[locale].sectionHeadings.skills} />
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+    {
+      skillCategories.map((category, categoryIndex) => (
+        <AnimatedSection delay={categoryIndex * 250}>
+          <div>
+            <h3 class="text-xs font-mono text-primary/70 tracking-wider mb-6 pb-3 border-b border-border/30">
+              {category.locales[locale].name}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <div>
+                  <TechIcon name={skill} size="md" showLabel />
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      ))
+    }
+  </div>
+</SectionContainer>

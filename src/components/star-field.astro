@@ -1,0 +1,167 @@
+<canvas data-star-field class="fixed inset-0 pointer-events-none" style="z-index: 0;"></canvas>
+
+<script>
+  import { animate } from 'motion'
+
+  interface Star {
+    x: number
+    y: number
+    size: number
+    opacity: number
+    twinkleSpeed: number
+    blinkPhase: number
+    blinkWindow: number
+    blinkDepth: number
+    layer: number
+    r: number
+    g: number
+    b: number
+  }
+
+  const lerp = (from: number, to: number, t: number) => from + (to - from) * t
+
+  const initStarField = () => {
+    const canvas = document.querySelector<HTMLCanvasElement>('[data-star-field]')
+    if (!canvas) return
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    let stars: Star[] = []
+    let time = 0
+    let scrollY = window.scrollY
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth * 2
+      canvas.height = window.innerHeight
+      initStars()
+    }
+
+    const initStars = () => {
+      const numStars = Math.floor((canvas.width * canvas.height) / 6000)
+      stars = []
+
+      for (let i = 0; i < numStars; i++) {
+        const layer = Math.random() < 0.3 ? 0 : Math.random() < 0.6 ? 1 : 2
+        const colorRoll = Math.random()
+        const shade = Math.random()
+
+        let r: number
+        let g: number
+        let b: number
+        let opacity: number
+
+        if (colorRoll < 0.45) {
+          // Warm stars (orange-red family).
+          r = Math.round(lerp(255, 248, shade))
+          g = Math.round(lerp(138, 188, shade))
+          b = Math.round(lerp(95, 160, shade))
+          opacity = Math.random() * 0.35 + 0.5
+        } else if (colorRoll < 0.9) {
+          // Cool stars (blue family).
+          r = Math.round(lerp(120, 175, shade))
+          g = Math.round(lerp(170, 220, shade))
+          b = Math.round(lerp(245, 255, shade))
+          opacity = Math.random() * 0.35 + 0.5
+        } else {
+          // A few near-white stars for contrast.
+          r = Math.round(lerp(220, 245, shade))
+          g = Math.round(lerp(226, 250, shade))
+          b = Math.round(lerp(235, 255, shade))
+          opacity = Math.random() * 0.35 + 0.35
+        }
+
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 1.5 + 0.5 + layer * 0.3,
+          opacity,
+          twinkleSpeed: Math.random() * 0.003 + 0.0015,
+          blinkPhase: Math.random(),
+          blinkWindow: Math.random() * 0.08 + 0.06,
+          blinkDepth: Math.random() * 0.45 + 0.45,
+          layer,
+          r,
+          g,
+          b
+        })
+      }
+    }
+
+    const draw = () => {
+      time += 1
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      const baseHorizontalOffset = time * 0.15
+
+      for (const star of stars) {
+        const layerSpeed = (star.layer + 1) * 0.5
+        const horizontalOffset = (baseHorizontalOffset * layerSpeed) % canvas.width
+        const parallaxOffset = (scrollY * (star.layer + 1) * 0.1) % canvas.height
+
+        let drawX = star.x - horizontalOffset
+        let drawY = star.y + parallaxOffset
+
+        if (drawX < 0) drawX += canvas.width
+        if (drawY > canvas.height) drawY -= canvas.height
+        if (drawY < 0) drawY += canvas.height
+
+        // Mostly stable visibility with short, fast dimming events.
+        const cycle = (time * star.twinkleSpeed + star.blinkPhase) % 1
+        let visibility = 1
+
+        if (cycle < star.blinkWindow) {
+          const local = cycle / star.blinkWindow
+          const dipPeak = 1 - Math.abs(local * 2 - 1)
+          visibility = 1 - dipPeak * star.blinkDepth
+        }
+
+        const shimmer =
+          0.96 + (Math.sin(time * star.twinkleSpeed * 0.25 + star.x * 0.02) + 1) * 0.5 * 0.04
+        const currentOpacity = star.opacity * visibility * shimmer
+
+        ctx.beginPath()
+        ctx.arc(drawX, drawY, star.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(${star.r}, ${star.g}, ${star.b}, ${currentOpacity})`
+        ctx.fill()
+
+        if (drawX < canvas.width / 2) {
+          ctx.beginPath()
+          ctx.arc(drawX + canvas.width, drawY, star.size, 0, Math.PI * 2)
+          ctx.fillStyle = `rgba(${star.r}, ${star.g}, ${star.b}, ${currentOpacity})`
+          ctx.fill()
+        }
+      }
+    }
+
+    const handleScroll = () => {
+      scrollY = window.scrollY
+    }
+
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    // Drive the canvas render loop with Motion instead of requestAnimationFrame.
+    const controls = animate(0, 1, {
+      duration: 1,
+      repeat: Infinity,
+      ease: 'linear',
+      onUpdate: draw
+    })
+
+    const cleanup = () => {
+      window.removeEventListener('resize', resizeCanvas)
+      window.removeEventListener('scroll', handleScroll)
+      controls.stop()
+    }
+
+    window.addEventListener('pagehide', cleanup, { once: true })
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStarField, { once: true })
+  } else {
+    initStarField()
+  }
+</script>

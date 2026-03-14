@@ -1,19 +1,19 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
-import icon from "astro-icon";
-import tailwindcss from "@tailwindcss/vite";
+import icon from 'astro-icon'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
   i18n: {
-    locales: ["es", "en"],
-    defaultLocale: "en",
+    locales: ['es', 'en'],
+    defaultLocale: 'en',
     routing: {
-        prefixDefaultLocale: false
+      prefixDefaultLocale: false
     }
   }
-});
+})

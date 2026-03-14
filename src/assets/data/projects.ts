@@ -6,9 +6,8 @@ export const projects: Project[] = [
     technologies: ['TypeScript', 'Rollup', 'Turborepo', 'WhatsApp'],
     liveUrl: 'https://ws-cloud-api.lexuil.com',
     githubUrl: 'https://github.com/Lexuil/ws-cloud-api',
-    screenshot: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop',
-    screenshotMobile:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=800&fit=crop',
+    screenshot: '/images/projects/ws-cloud-api.webp',
+    screenshotMobile: '/images/projects/ws-cloud-api-mobile.webp',
     locales: {
       es: {
         title: 'Ws Cloud API',

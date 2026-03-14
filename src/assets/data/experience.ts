@@ -11,17 +11,18 @@ export const experience: Experience[] = [
       es: {
         role: 'Desarrollador Fullstack',
         description:
-          'Herramientas personalizadas para la gestión de inventarios y ventas con Shopify y Word Office'
+          'Desarrollé e integré herramientas personalizadas para automatizar la sincronización de inventarios y ventas entre Shopify y Word Office, optimizando la eficiencia operativa.'
       },
       en: {
         role: 'Fullstack Developer',
-        description: 'Custom tools for inventory and sales management with Shopify and Word Office'
+        description:
+          'Developed and integrated custom tools to automate inventory and sales synchronization between Shopify and Word Office, streamlining operational efficiency.'
       }
     }
   },
   {
     id: 2,
-    company: 'Chatbot Presupuestos para la igualdad - ONU Mujeres',
+    company: 'ONU Mujeres Colombia',
     companyUrl: 'https://wa.me/573016697206',
     period: '2024 - 2025',
     technologies: [
@@ -38,29 +39,30 @@ export const experience: Experience[] = [
       es: {
         role: 'Desarrollador Fullstack',
         description:
-          'Chatbot diseñado para mejorar la accesibilidad sobre los proyectos para la equidad de la mujer'
+          'Lideré el desarrollo de un chatbot automatizado con AWS Lex y Lambda para facilitar el acceso a presupuestos de igualdad de género, incluyendo la generación dinámica de estadísticas visuales y dashboards de análisis.'
       },
       en: {
         role: 'Fullstack Developer',
-        description: "Chatbot designed to improve accessibility about projects for women's equity"
+        description:
+          'Led the development of an automated chatbot using AWS Lex and Lambda to provide access to gender equality budgets, featuring dynamic statistics image generation and custom analytics dashboards.'
       }
     }
   },
   {
     id: 3,
-    company: 'Chatbot Universidad ECCI',
+    company: 'Universidad ECCI',
     companyUrl: 'https://wa.me/573162862300',
-    period: '2023',
+    period: '2023 - Presente',
     currentActive: true,
     technologies: [],
     technologiesByYear: [
       {
         year: '2023',
-        technologies: ['IBM Cloud', 'Docker', 'WhatsApp', 'React', 'Express', 'MongoDB']
+        technologies: ['IBM Cloud', 'Docker', 'WhatsApp', 'MongoDB', 'React', 'Express']
       },
       {
         year: '2024',
-        technologies: ['IBM Cloud', 'Docker', 'WhatsApp', 'Next.js', 'Tailwind CSS']
+        technologies: ['IBM Cloud', 'Docker', 'WhatsApp', 'MongoDB', 'Next.js', 'Tailwind CSS']
       },
       {
         year: '2025',
@@ -71,6 +73,7 @@ export const experience: Experience[] = [
           'Nest.js',
           'Turborepo',
           'Tailwind CSS',
+          'PostgreSQL',
           'DynamoDB',
           'Redis',
           'S3',
@@ -87,6 +90,7 @@ export const experience: Experience[] = [
           'Nest.js',
           'Turborepo',
           'Tailwind CSS',
+          'PostgreSQL',
           'DynamoDB',
           'Redis',
           'S3',
@@ -100,11 +104,13 @@ export const experience: Experience[] = [
     locales: {
       es: {
         role: 'Desarrollador Fullstack',
-        description: 'Plataforma de atención al cliente para la Universidad ECCI'
+        description:
+          'Diseñé una plataforma omnicanal que gestiona más de 16k conversaciones mensuales, implementando una infraestructura de monorepo (Turborepo) e integrando LLMs a través de AWS Bedrock para atención automatizada ademas de un dashboard para comunicación en tiempo real entre usuarios y agentes humanos.'
       },
       en: {
         role: 'Fullstack Developer',
-        description: 'Customer service platform for ECCI University'
+        description:
+          'Architected an omni-channel platform handling 16k+ monthly interactions, implementing a monorepo structure (Turborepo) and integrating LLMs via AWS Bedrock for automated customer service, along with a real-time dashboard for seamless communication between users and human agents.'
       }
     }
   },
@@ -117,11 +123,13 @@ export const experience: Experience[] = [
     locales: {
       es: {
         role: 'Desarrollador Web',
-        description: 'Tienda online - Editorial de manga en español en Colombia'
+        description:
+          'Implementé y personalicé soluciones de e-commerce sobre WooCommerce para optimizar la distribución nacional de contenido editorial.'
       },
       en: {
         role: 'Web Developer',
-        description: 'Online store - Manga publisher in Spanish in Colombia'
+        description:
+          'Implemented and customized e-commerce solutions on WooCommerce to optimize national editorial content distribution.'
       }
     }
   },
@@ -134,11 +142,13 @@ export const experience: Experience[] = [
     locales: {
       es: {
         role: 'Desarrollador Frontend',
-        description: 'Presentación - Editorial de manga en español en Colombia'
+        description:
+          'Diseñé y construí una landing page de precentación de la marca, introduciendo animaciones personalizadas y optimizando la experiencia móvil para aumentar la retención de visitantes.'
       },
       en: {
         role: 'Frontend Developer',
-        description: 'Presentation - Manga publisher in Spanish in Colombia'
+        description:
+          'Designed and built a brand presentation landing page, introducing custom animations and optimizing the mobile experience to increase visitor retention.'
       }
     }
   },
@@ -146,13 +156,13 @@ export const experience: Experience[] = [
     id: 6,
     company: 'Mangalianza',
     companyUrl: 'https://mangalianza.com/',
-    period: '2022',
+    period: '2022 - Presente',
     currentActive: true,
     technologies: [],
     technologiesByYear: [
       {
         year: '2022',
-        technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'S3', 'MySql', 'Docker']
+        technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'Minio', 'MySql', 'Docker', 'Coolify']
       },
       {
         year: '2026',
@@ -162,11 +172,13 @@ export const experience: Experience[] = [
     locales: {
       es: {
         role: 'Desarrollador Fullstack',
-        description: 'Tienda online - Distribuidora de manga en español en Colombia'
+        description:
+          'Diseñé un motor de e-commerce personalizado con Laravel y Vue.js para la gestión de catálogos multiregión, automatizando el despliegue y la orquestación de servidores con Coolify y Docker.'
       },
       en: {
         role: 'Fullstack Developer',
-        description: 'Online store - Distributor of manga in Spanish in Colombia'
+        description:
+          'Engineered a custom Laravel/Vue.js e-commerce engine for multi-region catalog management, automating server orchestration and deployment using Coolify and Docker.'
       }
     }
   }

@@ -8,7 +8,9 @@ type NavItem = {
 type SectionTexts = {
   hero: {
     greeting: string
+    downloadCv: string
     socialAriaLabels: {
+      downloadCv: string
       github: string
       linkedin: string
       email: string
@@ -48,7 +50,9 @@ export const sectionTexts: Record<Locales, SectionTexts> = {
   en: {
     hero: {
       greeting: 'Hi, I am',
+      downloadCv: 'Download CV',
       socialAriaLabels: {
+        downloadCv: 'Download CV (PDF)',
         github: 'GitHub',
         linkedin: 'LinkedIn',
         email: 'Email'
@@ -92,7 +96,9 @@ export const sectionTexts: Record<Locales, SectionTexts> = {
   es: {
     hero: {
       greeting: 'Hola, soy',
+      downloadCv: 'Descargar CV',
       socialAriaLabels: {
+        downloadCv: 'Descargar CV (PDF)',
         github: 'GitHub',
         linkedin: 'LinkedIn',
         email: 'Correo'

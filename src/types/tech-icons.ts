@@ -26,6 +26,7 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
   // Tools & Platforms
   Git: { icon: 'simple-icons:git', color: '#F05032' },
   Docker: { icon: 'simple-icons:docker', color: '#2496ED' },
+  Coolify: { icon: 'simple-icons:coolify', color: '#6B16ED' },
   'IBM Cloud': { icon: 'simple-icons:ibm', color: '#054ADA' },
   Cloudflare: { icon: 'simple-icons:cloudflare', color: '#F38020' },
   AWS: { icon: 'simple-icons:amazonaws', color: '#FF9900' },
@@ -46,10 +47,11 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
   GraphQL: { icon: 'simple-icons:graphql', color: '#E10098' },
   IndexedDB: { icon: 'simple-icons:databricks', color: '#FF3621' },
   S3: { icon: 'simple-icons:amazons3', color: '#FF9900' },
+  Minio: { icon: 'simple-icons:minio', color: '#C72E49' },
   DynamoDB: { icon: 'simple-icons:amazondynamodb', color: '#4053D6' },
 
   // Other
-  Strapi: { icon: 'simple-icons:strapi', color: '#FFFFFF' },
+  Strapi: { icon: 'simple-icons:strapi', color: '#4945FF' },
   Twenty: { icon: 'simple-icons:twenty', color: '#FFFFFF' },
   Wordpress: { icon: 'simple-icons:wordpress', color: '#21759B' },
   Woocommerce: { icon: 'simple-icons:woocommerce', color: '#96588A' },

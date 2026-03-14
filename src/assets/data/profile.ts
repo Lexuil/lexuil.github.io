@@ -10,18 +10,18 @@ export const profile: Profile = {
   },
   locales: {
     es: {
-      title: 'Desarrollador Full Stack',
-      tagline: 'Construyendo experiencias digitales que son de otro mundo.',
-      bio: 'Soy un desarrollador apasionado que ama crear soluciones elegantes para problemas complejos. Mi trabajo se encuentra en la intersección del diseño y la ingeniería, creando experiencias que no solo son funcionales sino también agradables de usar.',
+      title: 'Full Stack Developer & AI Solutions Architect',
+      tagline: 'Transformando arquitecturas complejas en experiencias digitales de alto impacto.',
+      bio: 'Ingeniero Electrónico y desarrollador Full Stack especializado en el ecosistema de TypeScript y AWS. Me apasiona cerrar la brecha entre la ingeniería de sistemas robustos y la creación de interfaces intuitivas impulsadas por Inteligencia Artificial.',
       extendedBio:
-        'Con más de 3 años de experiencia en desarrollo web, he tenido la oportunidad de trabajar en proyectos que van desde pequeñas startups hasta grandes empresas. Creo en escribir código limpio y mantenible y en aprender continuamente nuevas tecnologías.'
+        'Con más de 3 años de experiencia, he diseñado soluciones escalables que van desde motores de e-commerce personalizados hasta plataformas omnicanal que gestionan miles de conversaciones automatizadas. Mi enfoque se centra en la arquitectura de software, monorepos y la integración estratégica de LLMs para optimizar procesos de negocio y mejorar la experiencia del usuario.'
     },
     en: {
-      title: 'Full Stack Developer',
-      tagline: 'Building digital experiences that are out of this world.',
-      bio: "I'm a passionate developer who loves crafting elegant solutions to complex problems. My work lies at the intersection of design and engineering, creating experiences that are not only functional but also delightful to use.",
+      title: 'Full Stack Developer & AI Solutions Architect',
+      tagline: 'Engineering the bridge between complex architecture and seamless user experiences.',
+      bio: 'Electronics Engineer and Full Stack Developer expert in TypeScript and the AWS ecosystem. I thrive at the intersection of robust backend engineering and AI-driven frontend experiences.',
       extendedBio:
-        "With over 3 years of experience in web development, I've had the opportunity to work on projects ranging from small startups to large enterprises. I believe in writing clean, maintainable code and continuously learning new technologies."
+        "With 3+ years of experience, I've built everything from high-volume messaging microservices to complex e-commerce engines. I specialize in architecting scalable solutions using AWS (Bedrock, Lambda, ECS) and modern web technologies. My track record includes leading the development of platforms handling 16k+ monthly interactions and contributing to open-source tools for the WhatsApp Cloud API."
     }
   }
 }

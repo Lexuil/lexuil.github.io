@@ -46,7 +46,7 @@ export const skills: { categories: SkillCategory[] } = {
           name: 'Cloud e infraestructura'
         }
       },
-      skills: ['AWS', 'IBM Cloud', 'Cloudflare', 'Terraform', 'Docker', 'S3']
+      skills: ['AWS', 'IBM Cloud', 'Cloudflare', 'Terraform', 'Docker', 'S3', 'Coolify', 'Vercel']
     },
     {
       locales: {
@@ -57,7 +57,7 @@ export const skills: { categories: SkillCategory[] } = {
           name: 'Bases de datos'
         }
       },
-      skills: ['MongoDB', 'DynamoDB', 'Redis', 'MySql', 'SQLite']
+      skills: ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Redis', 'MySql', 'SQLite']
     },
     {
       locales: {

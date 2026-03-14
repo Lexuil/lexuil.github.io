@@ -75,6 +75,20 @@ const { profile } = Astro.props
         </nav>
       </AnimatedSection>
 
+      <AnimatedSection delay={450}>
+        <div class="mt-8">
+          <a
+            href="/CV.pdf"
+            download
+            class="inline-flex items-center gap-2 rounded-md border border-border/70 bg-card/80 px-4 py-2 text-xs font-medium tracking-[0.12em] uppercase text-foreground transition-all duration-300 hover:bg-card hover:border-border"
+            aria-label={texts.hero.socialAriaLabels.downloadCv}
+          >
+            <Icon name="lucide:download" class="size-4" />
+            {texts.hero.downloadCv}
+          </a>
+        </div>
+      </AnimatedSection>
+
       <AnimatedSection delay={500}>
         <div class="flex items-center gap-5 mt-12">
           <a

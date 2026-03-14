@@ -5,24 +5,29 @@ interface Props {
   class?: string
   className?: string
   delay?: number
-  animation?: string
-  range?: string
 }
 
-const {
-  class: classProp,
-  className,
-  delay = 0,
-  animation = 'animate-fade-in-up',
-  range = 'animate-range-[entry_0%_cover_35%]',
-} = Astro.props
-
-const style = delay > 0 ? `animation-delay: ${delay}ms;` : undefined
+const { class: classProp, className, delay = 0 } = Astro.props
 ---
 
 <div
-  class={cn('timeline-view will-change-transform', animation, range, classProp, className)}
-  style={style}
+  class={cn('will-change-transform opacity-0 translate-y-8', classProp, className)}
+  data-animated-element
+  data-delay={String(delay)}
 >
   <slot />
 </div>
+
+<script>
+  import { animate } from 'motion/mini'
+  import { inView } from 'motion'
+
+  inView('[data-animated-element]', (element) => {
+    const delay = Number(element.getAttribute('data-delay') ?? '0') / 1000
+    animate(
+      element,
+      { opacity: 1, transform: 'translateY(0px)' },
+      { duration: 0.7, ease: 'easeOut', delay }
+    )
+  })
+</script>

@@ -20,8 +20,8 @@ const { experiences } = Astro.props;
   <SectionHeading number="02." title={sectionTexts[locale].sectionHeadings.experience} />
 
   <div class="space-y-2">
-    {experiences.map((exp, index) => (
-      <AnimatedSection delay={index * 100}>
+    {experiences.map((exp) => (
+      <AnimatedSection delay={300}>
         <a
           href={exp.companyUrl}
           target="_blank"

@@ -1,7 +1,8 @@
 ---
 import type { Project } from "@/types/project";
-import AnimatedSection from "@/components/animated-section.astro";
 import ProjectCard from "@/components/project-card.astro";
+import SectionContainer from "@/components/section-container.astro";
+import SectionHeading from "@/components/section-heading.astro";
 
 interface Props {
   projects: Project[];
@@ -10,22 +11,12 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<section id="projects" class="py-24 lg:py-40 px-6 lg:px-12">
-  <div class="max-w-6xl mx-auto">
-    <AnimatedSection>
-      <div class="flex items-center gap-4 mb-24">
-        <span class="font-mono text-primary/60 text-sm">02.</span>
-        <h2 class="text-sm tracking-[0.2em] uppercase text-muted-foreground">
-          Selected Work
-        </h2>
-        <div class="flex-1 h-px bg-border/50" />
-      </div>
-    </AnimatedSection>
+<SectionContainer id="projects" class="py-24 lg:py-40">
+  <SectionHeading number="03." title="Selected Work" class="mb-24" />
 
-    <div class="space-y-32 lg:space-y-48">
-      {projects.map((project, index) => (
-        <ProjectCard project={project} index={index} />
-      ))}
-    </div>
+  <div class="space-y-32 lg:space-y-48">
+    {projects.map((project, index) => (
+      <ProjectCard project={project} index={index} />
+    ))}
   </div>
-</section>
+</SectionContainer>

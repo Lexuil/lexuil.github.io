@@ -23,7 +23,7 @@ export const experience: Experience[] = [
     id: 2,
     company: 'Chatbot Presupuestos para la igualdad - ONU Mujeres',
     companyUrl: 'https://wa.me/573016697206',
-    period: '2024',
+    period: '2024 - 2025',
     technologies: [
       'AWS',
       'Terraform',
@@ -51,25 +51,59 @@ export const experience: Experience[] = [
     company: 'Chatbot Universidad ECCI',
     companyUrl: 'https://wa.me/573162862300',
     period: '2023',
-    technologies: [
-      'AWS',
-      'Terraform',
-      'Next.js',
-      'Turborepo',
-      'Tailwind CSS',
-      'DynamoDB',
-      'S3',
-      'MongoDB',
-      'Docker',
-      'WhatsApp'
+    currentActive: true,
+    technologies: [],
+    technologiesByYear: [
+      {
+        year: '2023',
+        technologies: ['IBM Cloud', 'Docker', 'WhatsApp', 'React', 'Express', 'MongoDB']
+      },
+      {
+        year: '2024',
+        technologies: ['IBM Cloud', 'Docker', 'WhatsApp', 'Next.js', 'Tailwind CSS']
+      },
+      {
+        year: '2025',
+        technologies: [
+          'AWS',
+          'Terraform',
+          'Next.js',
+          'Nest.js',
+          'Turborepo',
+          'Tailwind CSS',
+          'DynamoDB',
+          'Redis',
+          'S3',
+          'Docker',
+          'WhatsApp'
+        ]
+      },
+      {
+        year: '2025',
+        technologies: [
+          'AWS',
+          'Terraform',
+          'Next.js',
+          'Nest.js',
+          'Turborepo',
+          'Tailwind CSS',
+          'DynamoDB',
+          'Redis',
+          'S3',
+          'Docker',
+          'WhatsApp',
+          'Strapi',
+          'Twenty'
+        ]
+      }
     ],
     locales: {
       es: {
-        role: 'Proyecto',
+        role: 'Desarrollador Fullstack',
         description: 'Plataforma de atención al cliente para la Universidad ECCI'
       },
       en: {
-        role: 'Project',
+        role: 'Fullstack Developer',
         description: 'Customer service platform for ECCI University'
       }
     }
@@ -113,7 +147,18 @@ export const experience: Experience[] = [
     company: 'Mangalianza',
     companyUrl: 'https://mangalianza.com/',
     period: '2022',
-    technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'S3', 'MySql', 'Docker'],
+    currentActive: true,
+    technologies: [],
+    technologiesByYear: [
+      {
+        year: '2022',
+        technologies: ['Laravel', 'Vue.js', 'Tailwind CSS', 'S3', 'MySql', 'Docker']
+      },
+      {
+        year: '2026',
+        technologies: ['Nuxt', 'Tailwind CSS', 'SQLite', 'Cloudflare']
+      }
+    ],
     locales: {
       es: {
         role: 'Desarrollador Fullstack',

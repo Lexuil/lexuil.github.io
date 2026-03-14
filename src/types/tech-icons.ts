@@ -12,6 +12,7 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
   Rollup: { icon: 'simple-icons:rollupdotjs', color: '#EC4A3F' },
   React: { icon: 'simple-icons:react', color: '#61DAFB' },
   Nuxt: { icon: 'simple-icons:nuxtdotjs', color: '#00DC82' },
+  'Nest.js': { icon: 'simple-icons:nestjs', color: '#E0234E' },
   'Next.js': { icon: 'simple-icons:nextdotjs', color: '#FFFFFF' },
   'Node.js': { icon: 'simple-icons:nodedotjs', color: '#339933' },
   'Vue.js': { icon: 'simple-icons:vuedotjs', color: '#4FC08D' },
@@ -25,6 +26,7 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
   // Tools & Platforms
   Git: { icon: 'simple-icons:git', color: '#F05032' },
   Docker: { icon: 'simple-icons:docker', color: '#2496ED' },
+  'IBM Cloud': { icon: 'simple-icons:ibm', color: '#054ADA' },
   Cloudflare: { icon: 'simple-icons:cloudflare', color: '#F38020' },
   AWS: { icon: 'simple-icons:amazonaws', color: '#FF9900' },
   Vercel: { icon: 'simple-icons:vercel', color: '#FFFFFF' },
@@ -36,6 +38,7 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
 
   // Databases
   PostgreSQL: { icon: 'simple-icons:postgresql', color: '#4169E1' },
+  SQLite: { icon: 'simple-icons:sqlite', color: '#003B57' },
   MySql: { icon: 'simple-icons:mysql', color: '#4479A1' },
   MongoDB: { icon: 'simple-icons:mongodb', color: '#47A248' },
   Redis: { icon: 'simple-icons:redis', color: '#DC382D' },
@@ -46,6 +49,8 @@ export const techIcons: Record<string, { icon: string; color: `#${string}` }> = 
   DynamoDB: { icon: 'simple-icons:amazondynamodb', color: '#4053D6' },
 
   // Other
+  Strapi: { icon: 'simple-icons:strapi', color: '#FFFFFF' },
+  Twenty: { icon: 'simple-icons:twenty', color: '#FFFFFF' },
   Wordpress: { icon: 'simple-icons:wordpress', color: '#21759B' },
   Woocommerce: { icon: 'simple-icons:woocommerce', color: '#96588A' },
   Shopify: { icon: 'simple-icons:shopify', color: '#96BF48' },

@@ -16,24 +16,37 @@ export const skills: { categories: SkillCategory[] } = {
     {
       locales: {
         en: {
-          name: 'Frameworks'
+          name: 'Frameworks & Web'
         },
         es: {
-          name: 'Frameworks'
+          name: 'Frameworks y web'
         }
       },
-      skills: ['React', 'Next.js', 'Node.js', 'Vue.js', 'Express']
+      skills: [
+        'React',
+        'Next.js',
+        'Nuxt',
+        'Vue.js',
+        'Nest.js',
+        'Express',
+        'Laravel',
+        'Tailwind CSS',
+        'Vite',
+        'Turborepo',
+        'Wordpress',
+        'Woocommerce'
+      ]
     },
     {
       locales: {
         en: {
-          name: 'Tools & Platforms'
+          name: 'Cloud & Infrastructure'
         },
         es: {
-          name: 'Herramientas y plataformas'
+          name: 'Cloud e infraestructura'
         }
       },
-      skills: ['Git', 'Docker', 'AWS', 'Vercel', 'Figma']
+      skills: ['AWS', 'IBM Cloud', 'Cloudflare', 'Terraform', 'Docker', 'S3']
     },
     {
       locales: {
@@ -44,7 +57,18 @@ export const skills: { categories: SkillCategory[] } = {
           name: 'Bases de datos'
         }
       },
-      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Supabase']
+      skills: ['MongoDB', 'DynamoDB', 'Redis', 'MySql', 'SQLite']
+    },
+    {
+      locales: {
+        en: {
+          name: 'Platforms & Integrations'
+        },
+        es: {
+          name: 'Plataformas e integraciones'
+        }
+      },
+      skills: ['Shopify', 'WhatsApp', 'Strapi', 'Twenty']
     }
   ]
 }

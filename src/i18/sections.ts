@@ -23,6 +23,10 @@ type SectionTexts = {
     projects: string
     skills: string
   }
+  experienceItem: {
+    present: string
+    activeStatus: string
+  }
   projectCard: {
     viewProject: string
     featuredProject: string
@@ -64,6 +68,10 @@ export const sectionTexts: Record<Locales, SectionTexts> = {
       projects: 'Selected Work',
       skills: 'Technologies'
     },
+    experienceItem: {
+      present: 'Present',
+      activeStatus: 'Active'
+    },
     projectCard: {
       viewProject: 'View Project',
       featuredProject: 'FEATURED PROJECT',
@@ -103,6 +111,10 @@ export const sectionTexts: Record<Locales, SectionTexts> = {
       experience: 'Experiencia',
       projects: 'Proyectos destacados',
       skills: 'Tecnologías'
+    },
+    experienceItem: {
+      present: 'Actualidad',
+      activeStatus: 'Activo'
     },
     projectCard: {
       viewProject: 'Ver proyecto',

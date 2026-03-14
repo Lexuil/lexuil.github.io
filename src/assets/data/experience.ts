@@ -52,7 +52,7 @@ export const experience: Experience[] = [
     id: 3,
     company: 'Universidad ECCI',
     companyUrl: 'https://wa.me/573162862300',
-    period: '2023 - Presente',
+    period: '2023',
     currentActive: true,
     technologies: [],
     technologiesByYear: [
@@ -156,7 +156,7 @@ export const experience: Experience[] = [
     id: 6,
     company: 'Mangalianza',
     companyUrl: 'https://mangalianza.com/',
-    period: '2022 - Presente',
+    period: '2022',
     currentActive: true,
     technologies: [],
     technologiesByYear: [

@@ -22,7 +22,9 @@ const isEven = index % 2 === 0
 <AnimatedSection delay={index * 150}>
   <article class="group relative">
     {/* Project Number */}
-    <div class="absolute -left-4 lg:-left-12 top-0 hidden lg:block">
+    <div
+      class={`absolute top-0 hidden lg:block ${isEven ? '-right-4 lg:-right-12' : '-left-4 lg:-left-12'}`}
+    >
       <span
         class="font-mono text-6xl font-bold text-border/30 group-hover:text-primary/20 transition-colors duration-500"
       >
@@ -69,8 +71,8 @@ const isEven = index % 2 === 0
               <div
                 class={`absolute inset-0 transition-opacity duration-500 ${
                   isEven
-                    ? 'bg-gradient-to-l from-background/90 via-background/50 to-transparent'
-                    : 'bg-gradient-to-r from-background/90 via-background/50 to-transparent'
+                    ? 'bg-linear-to-l from-background/90 via-background/50 to-transparent'
+                    : 'bg-linear-to-r from-background/90 via-background/50 to-transparent'
                 }`}
               >
               </div>
@@ -89,7 +91,7 @@ const isEven = index % 2 === 0
                 )
               }
               <div
-                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"
+                class="absolute inset-0 bg-linear-to-t from-background/90 via-background/50 to-transparent"
               >
               </div>
             </div>

@@ -3,19 +3,47 @@ import type { SkillCategory } from '@/types/skills'
 export const skills: { categories: SkillCategory[] } = {
   categories: [
     {
-      name: 'Languages',
+      locales: {
+        en: {
+          name: 'Languages'
+        },
+        es: {
+          name: 'Lenguajes'
+        }
+      },
       skills: ['TypeScript', 'JavaScript', 'Python', 'HTML', 'CSS']
     },
     {
-      name: 'Frameworks',
+      locales: {
+        en: {
+          name: 'Frameworks'
+        },
+        es: {
+          name: 'Frameworks'
+        }
+      },
       skills: ['React', 'Next.js', 'Node.js', 'Vue.js', 'Express']
     },
     {
-      name: 'Tools & Platforms',
+      locales: {
+        en: {
+          name: 'Tools & Platforms'
+        },
+        es: {
+          name: 'Herramientas y plataformas'
+        }
+      },
       skills: ['Git', 'Docker', 'AWS', 'Vercel', 'Figma']
     },
     {
-      name: 'Databases',
+      locales: {
+        en: {
+          name: 'Databases'
+        },
+        es: {
+          name: 'Bases de datos'
+        }
+      },
       skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Supabase']
     }
   ]

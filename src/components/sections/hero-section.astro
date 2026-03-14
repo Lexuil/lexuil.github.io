@@ -2,10 +2,12 @@
 import AnimatedSection from '@/components/animated-section.astro';
 import { Planets } from '@/components/planets';
 import { Icon } from "astro-icon/components";
+import { sectionTexts } from '@/i18/sections';
 import type { Profile } from '@/types/profile'
 import type { Locales } from "@/types/locales";
 
 const locale = Astro.currentLocale as Locales;
+const texts = sectionTexts[locale];
 
 interface Props {
   profile: Profile
@@ -25,7 +27,7 @@ const { profile } = Astro.props;
     <div class="lg:sticky lg:top-32">
       <AnimatedSection>
         <span class="inline-block text-primary/80 text-xs tracking-[0.3em] uppercase mb-6 font-mono">
-          Hi, I am
+          {texts.hero.greeting}
         </span>
       </AnimatedSection>
 
@@ -50,14 +52,14 @@ const { profile } = Astro.props;
       <AnimatedSection delay={400}>
         <nav class="mt-12 hidden lg:block">
           <ul class="flex flex-col gap-4">
-            {['About', 'Experience', 'Projects', 'Skills'].map((item) => (
+            {texts.navigation.items.map((item) => (
               <li>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={item.href}
                   class="group flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <span class="w-8 h-px bg-muted-foreground/30 group-hover:w-12 group-hover:bg-foreground transition-all duration-300" />
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -72,7 +74,7 @@ const { profile } = Astro.props;
             target="_blank"
             rel="noopener noreferrer"
             class="text-muted-foreground hover:text-foreground transition-colors p-2 -m-2"
-            aria-label="GitHub"
+            aria-label={texts.hero.socialAriaLabels.github}
           >
             <Icon name="lucide:github" class="size-4.5" />
           </a>
@@ -81,14 +83,14 @@ const { profile } = Astro.props;
             target="_blank"
             rel="noopener noreferrer"
             class="text-muted-foreground hover:text-foreground transition-colors p-2 -m-2"
-            aria-label="LinkedIn"
+            aria-label={texts.hero.socialAriaLabels.linkedin}
           >
             <Icon name="lucide:linkedin" class="size-4.5" />
           </a>
           <a
             href={`mailto:${profile.email}`}
             class="text-muted-foreground hover:text-foreground transition-colors p-2 -m-2"
-            aria-label="Email"
+            aria-label={texts.hero.socialAriaLabels.email}
           >
             <Icon name="lucide:mail" class="size-4.5" />
           </a>

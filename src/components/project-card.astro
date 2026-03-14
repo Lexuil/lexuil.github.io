@@ -1,6 +1,7 @@
 ---
 import AnimatedSection from "@/components/animated-section.astro";
 import TechIconMinimal from "@/components/tech-icon-minimal.astro";
+import { sectionTexts } from "@/i18/sections";
 import type { Project } from "@/types/project";
 import type { Locales } from "@/types/locales";
 import { Icon } from "astro-icon/components";
@@ -12,6 +13,7 @@ interface Props {
 
 const locale = Astro.currentLocale as Locales;
 const { project, index } = Astro.props;
+const texts = sectionTexts[locale].projectCard;
 
 const imageLoaded = true;
 const isEven = index % 2 === 0;
@@ -49,7 +51,7 @@ const isEven = index % 2 === 0;
               {project.screenshot && (
                 <img
                   src={project.screenshot}
-                  alt={`${project.locales[locale].title} screenshot`}
+                  alt={texts.screenshotAlt(project.locales[locale].title)}
                   class={`object-cover object-top transition-all duration-700 ${
                     imageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
                   } group-hover:scale-[1.03]`}
@@ -69,7 +71,7 @@ const isEven = index % 2 === 0;
               {project.screenshotMobile && (
                 <img
                   src={project.screenshotMobile}
-                  alt={`${project.locales[locale].title} mobile screenshot`}
+                  alt={texts.mobileScreenshotAlt(project.locales[locale].title)}
                   class="object-cover object-center"
                   sizes="100vw"
                 />
@@ -83,7 +85,7 @@ const isEven = index % 2 === 0;
             isEven ? "left-4" : "right-4"
           }`}>
             <span class="text-xs font-mono text-foreground/80 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border/50">
-              View Project
+              {texts.viewProject}
             </span>
             <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
               <Icon name="lucide:arrow-up-right" class="size-4 text-primary-foreground" />
@@ -101,7 +103,7 @@ const isEven = index % 2 === 0;
         <div class={`${isEven ? "lg:pl-8" : "lg:pr-8"}`}>
           {/* Label */}
           <span class="inline-block font-mono text-primary text-xs tracking-widest mb-3">
-            FEATURED PROJECT
+            {texts.featuredProject}
           </span>
 
           {/* Title */}
@@ -132,11 +134,11 @@ const isEven = index % 2 === 0;
               target="_blank"
               rel="noopener noreferrer"
               class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group/link"
-              aria-label={`GitHub repository for ${project.locales[locale].title}`}
+              aria-label={texts.githubAriaLabel(project.locales[locale].title)}
             >
               <Icon name="lucide:github" class="size-5" />
               <span class="text-xs font-mono opacity-0 group-hover/link:opacity-100 transition-opacity">
-                Code
+                {texts.code}
               </span>
             </a>
             <a
@@ -144,11 +146,11 @@ const isEven = index % 2 === 0;
               target="_blank"
               rel="noopener noreferrer"
               class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group/link"
-              aria-label={`Live demo for ${project.locales[locale].title}`}
+              aria-label={texts.liveDemoAriaLabel(project.locales[locale].title)}
             >
               <Icon name="lucide:external-link" class="size-5" />
               <span class="text-xs font-mono opacity-0 group-hover/link:opacity-100 transition-opacity">
-                Live
+                {texts.live}
               </span>
             </a>
           </div>

@@ -3,15 +3,16 @@
 import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
+import type { Locales } from '@/types/locales'
+import { sectionTexts } from '@/i18/sections'
 
-const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' }
-]
+interface Props {
+  locale: Locales
+}
 
-export function Navigation() {
+export function Navigation({ locale }: Props) {
+  const navItems = sectionTexts[locale].navigation.items
+  const toggleMenuAriaLabel = sectionTexts[locale].navigation.toggleMenuAriaLabel
   const [activeSection, setActiveSection] = useState('about')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -35,7 +36,7 @@ export function Navigation() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [navItems])
 
   return (
     <>
@@ -83,7 +84,7 @@ export function Navigation() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 -m-2 text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Toggle menu"
+              aria-label={toggleMenuAriaLabel}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

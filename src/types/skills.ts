@@ -1,6 +1,13 @@
+import type { Locales } from '@/types/locales'
+
 export interface SkillCategory {
-  name: string
   skills: string[]
+  locales: Record<
+    Locales,
+    {
+      name: string
+    }
+  >
 }
 
 export interface SkillsSectionProps {

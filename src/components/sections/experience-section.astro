@@ -3,6 +3,7 @@ import AnimatedSection from "@/components/animated-section.astro";
 import TechIcon from "@/components/tech-icon.astro";
 import SectionContainer from "@/components/section-container.astro";
 import SectionHeading from "@/components/section-heading.astro";
+import { sectionTexts } from "@/i18/sections";
 import { Icon } from "astro-icon/components";
 import type { Experience } from '@/types/experience'
 import type { Locales } from "@/types/locales";
@@ -16,7 +17,7 @@ const { experiences } = Astro.props;
 ---
 
 <SectionContainer id="experience" class="py-24 lg:py-32">
-  <SectionHeading number="02." title="Experience" />
+  <SectionHeading number="02." title={sectionTexts[locale].sectionHeadings.experience} />
 
   <div class="space-y-2">
     {experiences.map((exp, index) => (

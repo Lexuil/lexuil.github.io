@@ -2,7 +2,7 @@
 import '@fontsource-variable/league-spartan'
 import '../styles/global.css'
 
-import { StarField } from '@components/star-field'
+import StarField from '@components/star-field.astro'
 import { Navigation } from '@components/navigation'
 import type { Locales } from '@/types/locales'
 import { seoTexts } from '@/i18/seo'
@@ -25,7 +25,7 @@ const seo = seoTexts[locale]
     <meta name="twitter:description" content={seo.description} />
   </head>
   <body class="bg-black text-white">
-    <StarField client:load />
+    <StarField />
     <Navigation client:load locale={locale} />
     <main class="relative z-10">
       <slot />

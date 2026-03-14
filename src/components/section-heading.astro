@@ -1,13 +1,13 @@
 ---
-import AnimatedSection from "@/components/animated-section.astro";
+import AnimatedSection from '@/components/animated-section.astro'
 
 interface Props {
-  number: string;
-  title: string;
-  class?: string;
+  number: string
+  title: string
+  class?: string
 }
 
-const { number, title, class: className = "mb-20" } = Astro.props;
+const { number, title, class: className = 'mb-20' } = Astro.props
 ---
 
 <AnimatedSection>
@@ -16,6 +16,6 @@ const { number, title, class: className = "mb-20" } = Astro.props;
     <h2 class="text-sm tracking-[0.2em] uppercase text-muted-foreground">
       {title}
     </h2>
-    <div class="flex-1 h-px bg-border/50" />
+    <div class="flex-1 h-px bg-border/50"></div>
   </div>
 </AnimatedSection>

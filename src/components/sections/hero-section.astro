@@ -1,18 +1,18 @@
 ---
-import AnimatedSection from '@/components/animated-section.astro';
-import { Planets } from '@/components/planets';
-import { Icon } from "astro-icon/components";
-import { sectionTexts } from '@/i18/sections';
+import AnimatedSection from '@/components/animated-section.astro'
+import { Planets } from '@/components/planets'
+import { Icon } from 'astro-icon/components'
+import { sectionTexts } from '@/i18/sections'
 import type { Profile } from '@/types/profile'
-import type { Locales } from "@/types/locales";
+import type { Locales } from '@/types/locales'
 
-const locale = Astro.currentLocale as Locales;
-const texts = sectionTexts[locale];
+const locale = Astro.currentLocale as Locales
+const texts = sectionTexts[locale]
 
 interface Props {
   profile: Profile
 }
-const { profile } = Astro.props;
+const { profile } = Astro.props
 ---
 
 <section
@@ -22,17 +22,23 @@ const { profile } = Astro.props;
   <Planets client:load />
 
   {/* Main content grid */}
-  <div class="relative z-10 max-w-6xl w-full mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center">
+  <div
+    class="relative z-10 max-w-6xl w-full mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center"
+  >
     {/* Left column - Name & Title */}
     <div class="lg:sticky lg:top-32">
       <AnimatedSection>
-        <span class="inline-block text-primary/80 text-xs tracking-[0.3em] uppercase mb-6 font-mono">
+        <span
+          class="inline-block text-primary/80 text-xs tracking-[0.3em] uppercase mb-6 font-mono"
+        >
           {texts.hero.greeting}
         </span>
       </AnimatedSection>
 
       <AnimatedSection delay={100}>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-3 tracking-tight text-balance leading-[1.1]">
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-3 tracking-tight text-balance leading-[1.1]"
+        >
           {profile.name}
         </h1>
       </AnimatedSection>
@@ -52,17 +58,19 @@ const { profile } = Astro.props;
       <AnimatedSection delay={400}>
         <nav class="mt-12 hidden lg:block">
           <ul class="flex flex-col gap-4">
-            {texts.navigation.items.map((item) => (
-              <li>
-                <a
-                  href={item.href}
-                  class="group flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <span class="w-8 h-px bg-muted-foreground/30 group-hover:w-12 group-hover:bg-foreground transition-all duration-300" />
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {
+              texts.navigation.items.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <span class="w-8 h-px bg-muted-foreground/30 group-hover:w-12 group-hover:bg-foreground transition-all duration-300" />
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </nav>
       </AnimatedSection>
@@ -115,7 +123,9 @@ const { profile } = Astro.props;
 
   {/* Scroll indicator */}
   <AnimatedSection delay={800}>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground/50">
+    <div
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground/50"
+    >
       <Icon name="lucide:arrow-down" class="size-4 animate-bounce" />
     </div>
   </AnimatedSection>

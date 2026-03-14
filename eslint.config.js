@@ -1,7 +1,7 @@
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import eslintPluginAstro from 'eslint-plugin-astro';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+import eslint from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import eslintPluginAstro from 'eslint-plugin-astro'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -11,7 +11,7 @@ export default tseslint.config(
   {
     rules: {
       // "astro/no-set-html-directive": "error"
-      "astro/semi": "off"
+      'astro/semi': 'off'
     }
   }
-);
+)

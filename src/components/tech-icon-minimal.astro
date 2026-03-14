@@ -1,19 +1,21 @@
 ---
-import { techIcons } from '@/types/tech-icons';
-import { Icon } from 'astro-icon/components';
+import { techIcons } from '@/types/tech-icons'
+import { Icon } from 'astro-icon/components'
 
 interface Props {
-  name: string;
+  name: string
 }
 
-const { name } = Astro.props;
+const { name } = Astro.props
 
-const tech = techIcons[name];
+const tech = techIcons[name]
 ---
 
-{!tech
-  ? <span class="text-[11px] text-muted-foreground/70 font-mono">{name}</span>
-  : <span class="inline-flex items-center gap-1.5 text-[11px] group cursor-default">
+{
+  !tech ? (
+    <span class="text-[11px] text-muted-foreground/70 font-mono">{name}</span>
+  ) : (
+    <span class="inline-flex items-center gap-1.5 text-[11px] group cursor-default">
       <Icon
         name={tech.icon}
         class="opacity-70 group-hover:opacity-100 transition-opacity duration-300 size-4"
@@ -23,4 +25,5 @@ const tech = techIcons[name];
         {name}
       </span>
     </span>
+  )
 }

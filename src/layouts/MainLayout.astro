@@ -1,14 +1,14 @@
 ---
-import "@fontsource-variable/league-spartan";
-import "../styles/global.css";
+import '@fontsource-variable/league-spartan'
+import '../styles/global.css'
 
-import { StarField } from "@components/star-field";
-import { Navigation } from "@components/navigation";
-import type { Locales } from "@/types/locales";
-import { seoTexts } from "@/i18/seo";
+import { StarField } from '@components/star-field'
+import { Navigation } from '@components/navigation'
+import type { Locales } from '@/types/locales'
+import { seoTexts } from '@/i18/seo'
 
-const locale = Astro.currentLocale as Locales;
-const seo = seoTexts[locale];
+const locale = Astro.currentLocale as Locales
+const seo = seoTexts[locale]
 ---
 
 <html lang={locale}>
@@ -25,7 +25,7 @@ const seo = seoTexts[locale];
     <meta name="twitter:description" content={seo.description} />
   </head>
   <body class="bg-black text-white">
-    <StarField client:load/>
+    <StarField client:load />
     <Navigation client:load locale={locale} />
     <main class="relative z-10">
       <slot />

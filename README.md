@@ -21,13 +21,13 @@ curl -fsSL https://bun.sh/install | bash
 
 Todos los comandos se ejecutan desde la raíz del proyecto, ne la terminal:
 
-| Command                      | Action                                           |
-| :------------------------    | :----------------------------------------------- |
-| `bun install`                | Instala las dependencias                         |
-| `bun -b astro dev`           | Inicia el servidor local en `localhost:4321`     |
-| `bun -b astro build`         | Compila el proyecto para producción en `./dist/` |
-| `bun -b astro preview`       | Previsualización del proyecto compilado en local |
-| `bun -b astro ...`           | Ejecuta comandos como `astro add`, `astro check` |
-| `bun -b astro -- --help`     | Obtener ayuda para usar Astro CLI                |
+| Command                  | Action                                           |
+| :----------------------- | :----------------------------------------------- |
+| `bun install`            | Instala las dependencias                         |
+| `bun -b astro dev`       | Inicia el servidor local en `localhost:4321`     |
+| `bun -b astro build`     | Compila el proyecto para producción en `./dist/` |
+| `bun -b astro preview`   | Previsualización del proyecto compilado en local |
+| `bun -b astro ...`       | Ejecuta comandos como `astro add`, `astro check` |
+| `bun -b astro -- --help` | Obtener ayuda para usar Astro CLI                |
 
 [Documentación de astro](https://docs.astro.build/en/getting-started/)

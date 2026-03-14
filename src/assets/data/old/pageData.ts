@@ -1,54 +1,54 @@
-import type { PageData } from "src/types/pageData";
+import type { PageData } from 'src/types/pageData'
 
 export const pageData: PageData = {
   en: {
-    title: "Projects",
+    title: 'Projects',
     presentation: {
       greeting: "Hello, I'm",
-      projectsButton: "Projects",
-      experienceButton: "Experience",
+      projectsButton: 'Projects',
+      experienceButton: 'Experience',
       cv: 'CV'
     },
     experience: {
-      subtitle: "This is my",
-      title: "Experience"
+      subtitle: 'This is my',
+      title: 'Experience'
     },
     projects: {
-      subtitle: "These are my",
-      title: "Projects",
-      currently: "Currently"
+      subtitle: 'These are my',
+      title: 'Projects',
+      currently: 'Currently'
     },
     footer: {
-      developedBy: "Developed by"
+      developedBy: 'Developed by'
     },
     alt: {
-      avatar: "Oscar Umaña",
-      projectScreenshot: "Screenshot of project"
+      avatar: 'Oscar Umaña',
+      projectScreenshot: 'Screenshot of project'
     }
   },
   es: {
-    title: "Proyectos",
+    title: 'Proyectos',
     presentation: {
-      greeting: "Hola, soy",
-      projectsButton: "Proyectos",
-      experienceButton: "Experiencia",
+      greeting: 'Hola, soy',
+      projectsButton: 'Proyectos',
+      experienceButton: 'Experiencia',
       cv: 'CV'
     },
     experience: {
-      subtitle: "Esta es mi",
-      title: "Experiencia"
+      subtitle: 'Esta es mi',
+      title: 'Experiencia'
     },
     projects: {
-      subtitle: "Estos son mis",
-      title: "Proyectos",
-      currently: "Actualidad"
+      subtitle: 'Estos son mis',
+      title: 'Proyectos',
+      currently: 'Actualidad'
     },
     footer: {
-      developedBy: "Desarrollado por"
+      developedBy: 'Desarrollado por'
     },
     alt: {
-      avatar: "Foto de Oscar Umaña",
-      projectScreenshot: "Captura de pantalla del proyecto"
+      avatar: 'Foto de Oscar Umaña',
+      projectScreenshot: 'Captura de pantalla del proyecto'
     }
   }
 }
